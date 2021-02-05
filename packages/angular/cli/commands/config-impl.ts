@@ -47,7 +47,7 @@ function parseJsonPath(path: string): (string | number)[] {
 
     const match = fragment.match(/([^\[]+)((\[.*\])*)/);
     if (!match) {
-      throw new Error('Invalid JSON path.');
+      throw new Error('无效的 JSON 路径。');
     }
 
     result.push(match[1]);
@@ -91,15 +91,15 @@ export class ConfigCommand extends Command<ConfigCommandSchema> {
         if (migrateLegacyGlobalConfig()) {
           config = getWorkspaceRaw(level)[0];
           this.logger.info(tags.oneLine`
-            We found a global configuration that was used in Angular CLI 1.
-            It has been automatically migrated.`);
+            我们发现一个全局配置是给 Angular CLI 1 用的。
+            我们已经把它自动迁移了。`);
         }
       } catch { }
     }
 
     if (options.value == undefined) {
       if (!config) {
-        this.logger.error('No config found.');
+        this.logger.error('未找到配置。');
 
         return 1;
       }
@@ -119,7 +119,7 @@ export class ConfigCommand extends Command<ConfigCommandSchema> {
     }
 
     if (value === undefined) {
-      this.logger.error('Value cannot be found.');
+      this.logger.error('未找到值。');
 
       return 1;
     } else if (typeof value === 'string') {
@@ -133,7 +133,7 @@ export class ConfigCommand extends Command<ConfigCommandSchema> {
 
   private async set(options: ConfigCommandSchema) {
     if (!options.jsonPath?.trim()) {
-      throw new Error('Invalid Path.');
+      throw new Error('无效的路径。');
     }
 
     if (
@@ -141,12 +141,12 @@ export class ConfigCommand extends Command<ConfigCommandSchema> {
       !options.jsonPath.startsWith('schematics.') &&
       !validCliPaths.has(options.jsonPath)
     ) {
-      throw new Error('Invalid Path.');
+      throw new Error('无效的路径。');
     }
 
     const [config, configPath] = getWorkspaceRaw(options.global ? 'global' : 'local');
     if (!config || !configPath) {
-      this.logger.error('Confguration file cannot be found.');
+      this.logger.error('配置文件未找到。');
 
       return 1;
     }
@@ -156,7 +156,7 @@ export class ConfigCommand extends Command<ConfigCommandSchema> {
     const modified = config.modify(jsonPath, normalizeValue(value));
 
     if (!modified) {
-      this.logger.error('Value cannot be found.');
+      this.logger.error('值未找到。');
 
       return 1;
     }

@@ -108,7 +108,7 @@ export class GenerateCommand extends SchematicCommand<GenerateCommandSchema> {
     // Find the generate subcommand.
     const subcommand = this.description.options.filter(x => x.subcommands)[0];
     if (Object.keys((subcommand && subcommand.subcommands) || {}).length == 1) {
-      this.logger.info(`\nTo see help for a schematic run:`);
+      this.logger.info(`\n要查看某个原理图的帮助信息，请运行：`);
       this.logger.info(colors.cyan(`  ng generate <schematic> --help`));
     }
 
