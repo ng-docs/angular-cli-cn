@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/add.json",
   "description": "Adds support for an external library to your project.",
+  "descriptionCn": "为你的项目添加对外部库的支持",
   "$longDescription": "./add.md",
 
   "$scope": "in",
@@ -14,6 +15,7 @@
         "collection": {
           "type": "string",
           "description": "The package to be added.",
+          "descriptionCn": "要添加的包。",
           "$default": {
             "$source": "argv",
             "index": 0
@@ -21,6 +23,7 @@
         },
         "registry": {
           "description": "The NPM registry to use.",
+          "descriptionCn": "要使用的 NPM registry。",
           "type": "string",
           "oneOf": [
             {
@@ -33,6 +36,7 @@
         },
         "verbose": {
           "description": "Display additional details about internal operations during execution.",
+          "descriptionCn": "在执行期间显示内部操作的详细信息。",
           "type": "boolean",
           "default": false
         }

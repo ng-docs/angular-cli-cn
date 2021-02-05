@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/new.json",
   "description": "Creates a new workspace and an initial Angular application.",
+  "descriptionCn": "创建一个新工作空间和一个初始 Angular 应用。",
   "$longDescription": "./new.md",
 
   "$aliases": [ "n" ],
@@ -16,12 +17,14 @@
         "collection": {
           "type": "string",
           "aliases": [ "c" ],
+          "descriptionCn": "用来生成初始应用的一组原理图。",
           "description": "A collection of schematics to use in generating the initial application."
         },
         "verbose": {
           "type": "boolean",
           "default": false,
           "aliases": [ "v" ],
+          "descriptionCn": "在输出日志中添加更多详情。",
           "description": "Add more details to output logging."
         }
       },

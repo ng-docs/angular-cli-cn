@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/e2e.json",
   "description": "Builds and serves an Angular app, then runs end-to-end tests using Protractor.",
+  "descriptionCn": "构建 Angular 应用，并启动开发服务器，然后使用 Protractor 运行端到端测试。",
   "$longDescription": "./e2e-long.md",
 
   "$aliases": [ "e" ],

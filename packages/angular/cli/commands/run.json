@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/run.json",
   "description": "Runs an Architect target with an optional custom builder configuration defined in your project.",
+  "descriptionCn": "在你的项目中运行一个带有自定义构建器配置的建筑师目标（Architect target）。",
   "$longDescription": "./run-long.md",
 
   "$aliases": [],
@@ -16,6 +17,7 @@
         "target": {
           "type": "string",
           "description": "The Architect target to run.",
+          "descriptionCn": "要运行的建筑师目标。",
           "$default": {
             "$source": "argv",
             "index": 0
@@ -23,6 +25,7 @@
         },
         "configuration": {
           "description": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.",
+          "descriptionCn": "构建器的一个或多个命名配置，是一个逗号分隔的列表，就像在 angular.json 的 \"configurations\" 部分指定的一样。\n本构建器使用这些命名配置来运行给定的目标。\n欲知详情，参见 https://angular.cn/guide/workspace-config#alternate-build-configurations。",
           "type": "string",
           "aliases": [ "c" ]
         }

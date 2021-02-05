@@ -88,7 +88,7 @@ export async function parseJsonSchemaToSubCommandDescription(
     }
   }
 
-  const description = '' + (schema.description === undefined ? '' : schema.description);
+  const description = '' + (schema.descriptionCn === undefined ? '' : schema.descriptionCn);
 
   return {
     name,
@@ -258,7 +258,7 @@ export async function parseJsonSchemaToOptions(
 
     const option: Option = {
       name,
-      description: '' + (current.description === undefined ? '' : current.description),
+      description: '' + (current.descriptionCn === undefined ? '' : current.descriptionCn),
       ...types.length == 1 ? { type } : { type, types },
       ...defaultValue !== undefined ? { default: defaultValue } : {},
       ...enumValues && enumValues.length > 0 ? { enum: enumValues } : {},

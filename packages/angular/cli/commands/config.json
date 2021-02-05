@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/config.json",
   "description": "Retrieves or sets Angular configuration values in the angular.json file for the workspace.",
+  "descriptionCn": "从本工作空间的 angular.json 文件中获取或设置 Angular 的配置值。",
   "$longDescription": "",
 
   "$aliases": [],
@@ -16,6 +17,7 @@
         "jsonPath": {
           "type": "string",
           "description": "The configuration key to set or query, in JSON path format. For example: \"a[3].foo.bar[2]\". If no new value is provided, returns the current value of this key.",
+          "descriptionCn": "要设置或查询的配置键，为 JSON path 格式。比如 \"a[3].foo.bar[2]\"。如果没有提供新值，则返回此配置键对应的当前值。",
           "$default": {
             "$source": "argv",
             "index": 0
@@ -24,6 +26,7 @@
         "value": {
           "type": ["string", "number", "boolean"],
           "description": "If provided, a new value for the given configuration key.",
+          "descriptionCn": "如果提供，则为指定配置键的新值。",
           "$default": {
             "$source": "argv",
             "index": 1
@@ -32,6 +35,7 @@
         "global": {
           "type": "boolean",
           "description": "Access the global configuration in the caller's home directory.",
+          "descriptionCn": "访问此调用者 home 目录下的全局配置。",
           "default": false,
           "aliases": ["g"]
         }

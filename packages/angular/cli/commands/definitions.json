@@ -8,6 +8,7 @@
         "project": {
           "type": "string",
           "description": "The name of the project to build. Can be an application or a library.",
+          "descriptionCn": "要构建的项目名。可以是应用或库。",
           "$default": {
             "$source": "argv",
             "index": 0
@@ -15,6 +16,7 @@
         },
         "configuration": {
           "description": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.\nSetting this explicitly overrides the \"--prod\" flag.",
+          "descriptionCn": "构建器的一个或多个命名配置，是一个逗号分隔的列表，就像在 angular.json 的 \"configurations\" 部分指定的一样。\n构建器使用这些命名配置运行给定的目标。\n欲知详情，参见 https://angular.cn/guide/workspace-config#alternate-build-configurations。\n可以通过显式指定 \"--prod\" 标志来覆盖它。",
           "type": "string",
           "aliases": [
             "c"
@@ -22,6 +24,7 @@
         },
         "prod": {
           "description": "Shorthand for \"--configuration=production\".\nSet the build configuration to the production target.\nBy default, the production target is set up in the workspace configuration such that all builds make use of bundling, limited tree-shaking, and also limited dead code elimination.",
+          "descriptionCn": "\"--configuration=production\" 的简写形式。\n把构建配置的目标设置为产品环境。\n默认情况下，产品环境目标是在工作空间配置中设置的，可以设置打包方式、摇树优化限制、死代码移除限制等方面。",
           "type": "boolean"
         }
       }
@@ -32,6 +35,7 @@
         "help": {
           "enum": [true, false, "json", "JSON"],
           "description": "Shows a help message for this command in the console.",
+          "descriptionCn": "在控制台显示关于本命令的帮助信息。",
           "default": false
         }
       }
@@ -42,13 +46,15 @@
           "type": "boolean",
           "default": false,
           "aliases": [ "d" ],
-          "description": "Run through and reports activity without writing out results."
+          "description": "Run through and reports activity without writing out results.",
+          "descriptionCn": "运行一遍并汇报其活动轨迹，但不真的写入任何结果。"
         },
         "force": {
           "type": "boolean",
           "default": false,
           "aliases": [ "f" ],
-          "description": "Force overwriting of existing files."
+          "description": "Force overwriting of existing files.",
+          "descriptionCn": "强制覆盖现存文件。"
         }
       }
     },
@@ -57,12 +63,14 @@
         "interactive": {
           "type": "boolean",
           "default": "true",
-          "description": "Enable interactive input prompts."
+          "description": "Enable interactive input prompts.",
+          "descriptionCn": "启用交互式输入提示。"
         },
         "defaults": {
           "type": "boolean",
           "default": "false",
-          "description": "Disable interactive input prompts for options with a default."
+          "description": "Disable interactive input prompts for options with a default.",
+          "descriptionCn": "对有默认值的选项禁用交互式输入提示。"
         }
       }
     }

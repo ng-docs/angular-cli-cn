@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/update.json",
   "description": "Updates your application and its dependencies. See https://update.angular.io/",
+  "descriptionCn": "更新你的应用及其依赖。参见 https://update.angular.cn/",
   "$longDescription": "./update-long.md",
 
   "$scope": "all",
@@ -19,6 +20,7 @@
       "properties": {
         "packages": {
           "description": "The names of package(s) to update.",
+          "descriptionCn": "要更新的包名（可以有多个）。",
           "type": "array",
           "items": {
             "type": "string"
@@ -29,51 +31,61 @@
         },
         "force": {
           "description": "If false, will error out if installed packages are incompatible with the update.",
+          "descriptionCn": "如果为 false，那么如果已安装的包与这次更新不兼容，就会报错并退出。",
           "default": false,
           "type": "boolean"
         },
         "all": {
           "description": "Whether to update all packages in package.json.",
+          "descriptionCn": "是否更新 package.json 中的所有包。",
           "default": false,
           "type": "boolean",
           "x-deprecated": true
         },
         "next": {
           "description": "Use the prerelease version, including beta and RCs.",
+          "descriptionCn": "使用与发布版本，包括 beta 和 RC。",
           "default": false,
           "type": "boolean"
         },
         "migrateOnly": {
           "description": "Only perform a migration, do not update the installed version.",
+          "descriptionCn": "只执行迁移，而不更新已安装的版本。",
           "oneOf": [
             {
               "type": "boolean"
             },
             {
               "type": "string",
+              "descriptionCn": "要运行的迁移的名字。",
               "description": "The name of the migration to run."
             }
           ]
         },
         "from": {
           "description": "Version from which to migrate from. Only available with a single package being updated, and only on migration only.",
+          "descriptionCn": "要从哪个版本开始迁移。只能用在升级单个包时，而且只能用于迁移工作。",
           "type": "string"
         },
         "to": {
           "description": "Version up to which to apply migrations. Only available with a single package being updated, and only on migrations only. Requires from to be specified. Default to the installed version detected.",
+          "descriptionCn": "要迁移到哪个版本。只能用在升级单个包时，而且只能用于迁移工作。需要指定过 from 参数。默认是所检测到的已安装版本。",
           "type": "string"
         },
         "allowDirty": {
           "description": "Whether to allow updating when the repository contains modified or untracked files.",
+          "descriptionCn": "是否允许本仓库包含已修改或未跟踪的文件时进行更新。",
           "type": "boolean"
         },
         "verbose": {
           "description": "Display additional details about internal operations during execution.",
+          "descriptionCn": "在执行期间显示关于内部操作的详情。",
           "type": "boolean",
           "default": false
         },
         "createCommits": {
           "description": "Create source control commits for updates and migrations.",
+          "descriptionCn": "为升级和迁移的过程，在源码控制中创建一些提交。",
           "type": "boolean",
           "default": false,
           "aliases": ["C"]

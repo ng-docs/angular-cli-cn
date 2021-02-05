@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/generate.json",
   "description": "Generates and/or modifies files based on a schematic.",
+  "descriptionCn": "基于某个原理图生成和/或修改文件。",
   "$longDescription": "",
 
   "$aliases": [ "g" ],
@@ -16,6 +17,7 @@
         "schematic": {
           "type": "string",
           "description": "The schematic or collection:schematic to generate.",
+          "descriptionCn": "要生成的 schematic 或 collection:schematic",
           "$default": {
             "$source": "argv",
             "index": 0

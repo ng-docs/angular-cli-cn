@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/serve.json",
   "description": "Builds and serves your app, rebuilding on file changes.",
+  "descriptionCn": "构建应用，并启动开发服务器，当文件变化时重新构建。",
   "$longDescription": "",
 
   "$aliases": [ "s" ],
