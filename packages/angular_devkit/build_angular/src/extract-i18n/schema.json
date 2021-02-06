@@ -1,17 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "Extract i18n Target",
-  "description": "Extract i18n target options for Build Facade.",
+  "description": "Extract i18n target options for Build Facade.\n\n提取 Build Facade 的 i18n 目标选项。",
   "type": "object",
   "properties": {
     "browserTarget": {
       "type": "string",
-      "description": "A browser builder target to extract i18n messages in the format of `project:target[:configuration]`. You can also pass in more than one configuration name as a comma-separated list. Example: `project:target:production,staging`.",
+      "description": "A browser builder target to extract i18n messages in the format of `project:target[:configuration]`. You can also pass in more than one configuration name as a comma-separated list. Example: `project:target:production,staging`.\n\n一个浏览器构建器目标，用来以 `project:target[:configuration]` 格式提取 i18n 消息。你还可以传入逗号分隔的多个配置名称列表。例如：`project:target:production,staging`。",
       "pattern": "^[^:\\s]+:[^:\\s]+(:[^\\s]+)?$"
     },
     "format": {
       "type": "string",
-      "description": "Output format for the generated file.",
+      "description": "Output format for the generated file.\n\n要生成文件的输出格式。",
       "default": "xlf",
       "enum": [
         "xmb",
@@ -26,9 +26,9 @@
     },
     "i18nFormat": {
       "type": "string",
-      "description": "Output format for the generated file.",
+      "description": "Output format for the generated file.\n\n要生成文件的输出格式。",
       "default": "xlf",
-      "x-deprecated": "Use 'format' option instead.",
+      "x-deprecated": "Use 'format' option instead.\n\n改用 'format' 选项代替。",
       "enum": [
         "xmb",
         "xlf",
@@ -42,25 +42,25 @@
     },
     "i18nLocale": {
       "type": "string",
-      "description": "Specifies the source language of the application.",
-      "x-deprecated": "Use 'i18n' project level sub-option 'sourceLocale' instead."
+      "description": "Specifies the source language of the application.\n\n指定应用程序的源语言。",
+      "x-deprecated": "Use 'i18n' project level sub-option 'sourceLocale' instead.\n\n使用 'i18n' 项目级的子配置 'sourceLocale' 代替。"
     },
     "ivy": {
       "type": "boolean",
-      "description": "Use Ivy compiler to extract translations. The default for Ivy applications."
+      "description": "Use Ivy compiler to extract translations. The default for Ivy applications.\n\n使用 Ivy 编译器提取翻译。在 Ivy 应用中默认启用。"
     },
     "progress": {
       "type": "boolean",
-      "description": "Log progress to the console.",
+      "description": "Log progress to the console.\n\n将进度记录到控制台。",
       "default": true
     },
     "outputPath": {
       "type": "string",
-      "description": "Path where output will be placed."
+      "description": "Path where output will be placed.\n\n要放置输出结果的路径。"
     },
     "outFile": {
       "type": "string",
-      "description": "Name of the file to output."
+      "description": "Name of the file to output.\n\n要输出的文件名。"
     }
   },
   "additionalProperties": false,

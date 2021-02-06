@@ -6,19 +6,19 @@
   "properties": {
     "main": {
       "type": "string",
-      "description": "The name of the main entry-point file."
+      "description": "The name of the main entry-point file.\n\n主入口点文件的名称。"
     },
     "tsConfig": {
       "type": "string",
       "default": "tsconfig.app.json",
-      "description": "The name of the TypeScript configuration file."
+      "description": "The name of the TypeScript configuration file.\n\nTypeScript 配置文件的名称。"
     },
     "stylePreprocessorOptions": {
-      "description": "Options to pass to style preprocessors",
+      "description": "Options to pass to style preprocessors\n\n要传给样式预处理器的选项",
       "type": "object",
       "properties": {
         "includePaths": {
-          "description": "Paths to include. Paths will be resolved to project root.",
+          "description": "Paths to include. Paths will be resolved to project root.\n\n包含的路径。这些路径会基于项目的根目录进行解析。",
           "type": "array",
           "items": {
             "type": "string"
@@ -29,7 +29,7 @@
       "additionalProperties": false
     },
     "optimization": {
-      "description": "Enables optimization of the build output. Including minification of scripts and styles, tree-shaking and dead-code elimination. For more information, see https://angular.io/guide/workspace-config#optimization-configuration.",
+      "description": "Enables optimization of the build output. Including minification of scripts and styles, tree-shaking and dead-code elimination. For more information, see https://angular.io/guide/workspace-config#optimization-configuration.\n\n启用构建输出的优化。包括脚本和样式的最小化、摇树优化和消除死代码等。欲知详情，请参阅</guide/workspace-config#optimization-configuration>。",
       "x-user-analytics": 16,
       "default": false,
       "oneOf": [
@@ -38,12 +38,12 @@
           "properties": {
             "scripts": {
               "type": "boolean",
-              "description": "Enables optimization of the scripts output.",
+              "description": "Enables optimization of the scripts output.\n\n启用脚本输出的优化。",
               "default": true
             },
             "styles": {
               "type": "boolean",
-              "description": "Enables optimization of the styles output.",
+              "description": "Enables optimization of the styles output.\n\n启用样式输出的优化。",
               "default": true
             }
           },
@@ -55,7 +55,7 @@
       ]
     },
     "fileReplacements": {
-      "description": "Replace compilation source files with other compilation source files in the build.",
+      "description": "Replace compilation source files with other compilation source files in the build.\n\n用构建中的其他编译源文件替换编译源文件。",
       "type": "array",
       "items": {
         "$ref": "#/definitions/fileReplacement"
@@ -64,15 +64,15 @@
     },
     "outputPath": {
       "type": "string",
-      "description": "Path where output will be placed."
+      "description": "Path where output will be placed.\n\n要输出到的路径。"
     },
     "resourcesOutputPath": {
       "type": "string",
-      "description": "The path where style resources will be placed, relative to outputPath.",
+      "description": "The path where style resources will be placed, relative to outputPath.\n\n放置样式资源的、相对于 outputPath 的路径。",
       "default": ""
     },
     "sourceMap": {
-      "description": "Output source maps for scripts and styles. For more information, see https://angular.io/guide/workspace-config#source-map-configuration.",
+      "description": "Output source maps for scripts and styles. For more information, see https://angular.io/guide/workspace-config#source-map-configuration.\n\n输出脚本和样式的源码映射信息。欲知详情，请参阅</guide/workspace-config#source-map-configuration>。",
       "default": true,
       "oneOf": [
         {
@@ -80,22 +80,22 @@
           "properties": {
             "scripts": {
               "type": "boolean",
-              "description": "Output source maps for all scripts.",
+              "description": "Output source maps for all scripts.\n\n输出所有脚本的源码映射信息。",
               "default": true
             },
             "styles": {
               "type": "boolean",
-              "description": "Output source maps for all styles.",
+              "description": "Output source maps for all styles.\n\n输出所有样式的源码映射信息。",
               "default": true
             },
             "hidden": {
               "type": "boolean",
-              "description": "Output source maps used for error reporting tools.",
+              "description": "Output source maps used for error reporting tools.\n\n输出用于错误报告工具的源码映射信息。",
               "default": false
             },
             "vendor": {
               "type": "boolean",
-              "description": "Resolve vendor packages source maps.",
+              "description": "Resolve vendor packages source maps.\n\n是否解析来自供应商包的源码映射信息。",
               "default": false
             }
           },
@@ -108,49 +108,49 @@
     },
     "deployUrl": {
       "type": "string",
-      "description": "URL where files will be deployed."
+      "description": "URL where files will be deployed.\n\n这些文件将部署到的 URL。"
     },
     "verbose": {
       "type": "boolean",
-      "description": "Adds more details to output logging.",
+      "description": "Adds more details to output logging.\n\n将更多详细信息添加到输出日志。",
       "default": false
     },
     "progress": {
       "type": "boolean",
-      "description": "Log progress to the console while building.",
+      "description": "Log progress to the console while building.\n\n在构建时将进度记录到控制台。",
       "default": true
     },
     "i18nFile": {
       "type": "string",
-      "description": "Localization file to use for i18n.",
-      "x-deprecated": "Use 'locales' object in the project metadata instead."
+      "description": "Localization file to use for i18n.\n\n要用于 i18n 的本地化文件。",
+      "x-deprecated": "Use 'locales' object in the project metadata instead.\n\n改用项目元数据中的 'locales' 对象代替。"
     },
     "i18nFormat": {
       "type": "string",
-      "description": "Format of the localization file specified with --i18n-file.",
-      "x-deprecated": "No longer needed as the format will be determined automatically."
+      "description": "Format of the localization file specified with --i18n-file.\n\n用 --i18n-file 指定的本地化文件的格式。",
+      "x-deprecated": "No longer needed as the format will be determined automatically.\n\n不需要了，因为现在会自动确定格式。"
     },
     "i18nLocale": {
       "type": "string",
-      "description": "Locale to use for i18n.",
-      "x-deprecated": "Use 'localize' instead."
+      "description": "Locale to use for i18n.\n\n要用于 i18n 的语言环境。",
+      "x-deprecated": "Use 'localize' instead.\n\n使用 'localize' 代替。"
     },
     "i18nMissingTranslation": {
       "type": "string",
-      "description": "How to handle missing translations for i18n.",
+      "description": "How to handle missing translations for i18n.\n\ni18n 要如何处理缺失翻译。",
       "enum": ["warning", "error", "ignore"],
       "default": "warning"
     },
     "localize": {
-      "description": "Translate the bundles in one or more locales.",
+      "description": "Translate the bundles in one or more locales.\n\n在一个或多个语言环境下翻译这些包。",
       "oneOf": [
         {
           "type": "boolean",
-          "description": "Translate all locales."
+          "description": "Translate all locales.\n\n翻译所有语言环境。"
         },
         {
           "type": "array",
-          "description": "List of locales ID's to translate.",
+          "description": "List of locales ID's to translate.\n\n要翻译的语言环境 ID 列表。",
           "minItems": 1,
           "items": {
             "type": "string",
@@ -161,7 +161,7 @@
     },
     "outputHashing": {
       "type": "string",
-      "description": "Define the output filename cache-busting hashing mode.",
+      "description": "Define the output filename cache-busting hashing mode.\n\n定义输出文件名的缓存无效哈希（cache-busting hashing）的模式。",
       "default": "none",
       "enum": [
         "none",
@@ -172,30 +172,30 @@
     },
     "deleteOutputPath": {
       "type": "boolean",
-      "description": "Delete the output path before building.",
+      "description": "Delete the output path before building.\n\n构建前删除输出路径。",
       "default": true
     },
     "preserveSymlinks": {
       "type": "boolean",
-      "description": "Do not use the real path when resolving modules. If unset then will default to `true` if NodeJS option --preserve-symlinks is set."
+      "description": "Do not use the real path when resolving modules. If unset then will default to `true` if NodeJS option --preserve-symlinks is set.\n\n当解析模块时，不要使用真实路径。如果未设置，则当设置了 NodeJS 的 --preserve-symlinks 选项时，就默认为 `true`。"
     },
     "extractLicenses": {
       "type": "boolean",
-      "description": "Extract all licenses in a separate file, in the case of production builds only.",
+      "description": "Extract all licenses in a separate file, in the case of production builds only.\n\n（只在生产版本中有效）将所有许可证（license）提取到一个单独的文件中。",
       "default": true
     },
     "showCircularDependencies": {
       "type": "boolean",
-      "description": "Show circular dependency warnings on builds.",
+      "description": "Show circular dependency warnings on builds.\n\n在构建中显示循环依赖项警告。",
       "default": true
     },
     "namedChunks": {
       "type": "boolean",
-      "description": "Use file name for lazy loaded chunks.",
+      "description": "Use file name for lazy loaded chunks.\n\n对于惰性加载的块，使用文件名进行命名。",
       "default": true
     },
     "bundleDependencies": {
-      "description": "Which external dependencies to bundle into the bundle. By default, all of node_modules will be bundled.",
+      "description": "Which external dependencies to bundle into the bundle. By default, all of node_modules will be bundled.\n\n将哪些外部依赖项捆绑进去。默认情况下，所有的 node_modules 将被捆绑进去。",
       "default": true,
       "oneOf": [
         {
@@ -211,7 +211,7 @@
       ]
     },
     "externalDependencies": {
-      "description": "Exclude the listed external dependencies from being bundled into the bundle. Instead, the created bundle relies on these dependencies to be available during runtime.",
+      "description": "Exclude the listed external dependencies from being bundled into the bundle. Instead, the created bundle relies on these dependencies to be available during runtime.\n\n从捆绑中排除列出的外部依赖项。相反，创建的捆绑包将在运行时依赖这些依赖项。",
       "type": "array",
       "items": {
         "type": "string"
@@ -220,31 +220,31 @@
     },
     "statsJson": {
       "type": "boolean",
-      "description": "Generates a 'stats.json' file which can be analyzed using tools such as 'webpack-bundle-analyzer'.",
+      "description": "Generates a 'stats.json' file which can be analyzed using tools such as 'webpack-bundle-analyzer'.\n\n生成一个 “stats.json” 文件，可以使用 “webpack-bundle-analyzer” 之类的工具进行分析。",
       "default": false
     },
     "forkTypeChecker": {
       "type": "boolean",
-      "description": "Run the TypeScript type checker in a forked process.",
+      "description": "Run the TypeScript type checker in a forked process.\n\n在子进程（forked process）中运行 TypeScript 类型检查器。",
       "default": true
     },
     "lazyModules": {
-      "description": "List of additional NgModule files that will be lazy loaded. Lazy router modules will be discovered automatically.",
+      "description": "List of additional NgModule files that will be lazy loaded. Lazy router modules will be discovered automatically.\n\n要惰性加载的其他 NgModule 文件的列表。那些惰性加载的路由模块会自动发现，不用在这里添加。",
       "type": "array",
       "items": {
         "type": "string"
       },
-      "x-deprecated": "'SystemJsNgModuleLoader' is deprecated, and this is part of its usage. Use 'import()' syntax instead.",
+      "x-deprecated": "'SystemJsNgModuleLoader' is deprecated, and this is part of its usage. Use 'import()' syntax instead.\n\n'SystemJsNgModuleLoader' 已弃用，这是它的一部分。用 'import()' 语法代替。",
       "default": []
     },
     "watch": {
       "type": "boolean",
-      "description": "Run build when files change.",
+      "description": "Run build when files change.\n\n当文件更改时自动构建。",
       "default": false
     },
     "poll": {
       "type": "number",
-      "description": "Enable and define the file watching poll time period in milliseconds."
+      "description": "Enable and define the file watching poll time period in milliseconds.\n\n启用并定义文件监视轮询间隔（以毫秒为单位）。"
     }
   },
   "additionalProperties": false,

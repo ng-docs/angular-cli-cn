@@ -3,23 +3,23 @@
   "id": "SchematicsAngularServiceWorker",
   "title": "Angular Service Worker Options Schema",
   "type": "object",
-  "description": "Pass this schematic to the \"run\" command to create a service worker",
+  "description": "Pass this schematic to the \"run\" command to create a service worker\n\n将此原理图传递给 “run” 命令以创建 Service Worker ",
   "properties": {
     "project": {
       "type": "string",
-      "description": "The name of the project.",
+      "description": "The name of the project.\n\n项目的名称。",
       "$default": {
         "$source": "projectName"
       }
     },
     "target": {
       "type": "string",
-      "description": "The target to apply service worker to.",
+      "description": "The target to apply service worker to.\n\n要把 Service Worker 应用到的目标。",
       "default": "build"
     },
     "configuration": {
       "type": "string",
-      "description": "The configuration to apply service worker to.",
+      "description": "The configuration to apply service worker to.\n\n要应用 Service Worker 的配置。",
       "default": "production"
     }
   },

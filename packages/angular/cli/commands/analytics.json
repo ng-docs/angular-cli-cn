@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/analytics.json",
-  "description": "Configures the gathering of Angular CLI usage metrics. See https://angular.io/cli/usage-analytics-gathering.",
+  "descriptionEn": "Configures the gathering of Angular CLI usage metrics. See https://angular.io/cli/usage-analytics-gathering.",
+  "description": "Configures the gathering of Angular CLI usage metrics. See https://angular.io/cli/usage-analytics-gathering.\n\n配置 Angular CLI 使用情况度量的收集策略。参见 https://angular.cn/cli/usage-analytics-gathering。",
   "$longDescription": "./analytics-long.md",
 
   "$aliases": [],
@@ -21,7 +22,8 @@
             "project",
             "prompt"
           ],
-          "description": "Directly enables or disables all usage analytics for the user, or prompts the user to set the status interactively, or sets the default status for the project.",
+          "descriptionEn": "Directly enables or disables all usage analytics for the user, or prompts the user to set the status interactively, or sets the default status for the project.",
+          "description": "Directly enables or disables all usage analytics for the user, or prompts the user to set the status interactively, or sets the default status for the project.\n\n直接启用或禁用当前用户的所有使用情况分析，或交互式的提示用户进行设置，或设置项目的默认状态。",
           "$default": {
             "$source": "argv",
             "index": 0
@@ -33,7 +35,8 @@
             "off",
             "prompt"
           ],
-          "description": "Sets the default analytics enablement status for the project.",
+          "descriptionEn": "Sets the default analytics enablement status for the project.",
+          "description": "Sets the default analytics enablement status for the project.\n\n为本项目设置使用情况分析的默认启用状态。",
           "$default": {
             "$source": "argv",
             "index": 1

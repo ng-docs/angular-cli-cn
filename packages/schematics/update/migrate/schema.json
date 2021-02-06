@@ -4,19 +4,19 @@
   "type": "object",
   "properties": {
     "package": {
-      "description": "The package to migrate.",
+      "description": "The package to migrate.\n\n要迁移的包。",
       "type": "string"
     },
     "collection": {
-      "description": "The collection to load the migrations from.",
+      "description": "The collection to load the migrations from.\n\n要从中加载迁移的集合。",
       "type": "string"
     },
     "from": {
-      "description": "The version installed previously.",
+      "description": "The version installed previously.\n\n先前已安装的版本。",
       "type": "string"
     },
     "to": {
-      "description": "The version to migrate to.",
+      "description": "The version to migrate to.\n\n要迁移到的版本。",
       "type": "string"
     }
   },

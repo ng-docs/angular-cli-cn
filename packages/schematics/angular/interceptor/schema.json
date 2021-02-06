@@ -3,11 +3,11 @@
   "id": "SchematicsAngularInterceptor",
   "title": "Angular Interceptor Options Schema",
   "type": "object",
-  "description": "Creates a new, generic interceptor definition in the given or default project.",
+  "description": "Creates a new, generic interceptor definition in the given or default project.\n\n在给定或默认项目中创建一个新的通用拦截器定义。",
   "properties": {
     "name": {
       "type": "string",
-      "description": "The name of the interceptor.",
+      "description": "The name of the interceptor.\n\n拦截器的名称。",
       "$default": {
         "$source": "argv",
         "index": 0
@@ -17,12 +17,12 @@
     "path": {
       "type": "string",
       "format": "path",
-      "description": "The path at which to create the interceptor, relative to the workspace root.",
+      "description": "The path at which to create the interceptor, relative to the workspace root.\n\n要创建的拦截器的路径。是相对于工作区根目录的。",
       "visible": false
     },
     "project": {
       "type": "string",
-      "description": "The name of the project.",
+      "description": "The name of the project.\n\n项目的名称。",
       "$default": {
         "$source": "projectName"
       }
@@ -30,19 +30,19 @@
     "flat": {
       "type": "boolean",
       "default": true,
-      "description": "When true (the default), creates files at the top level of the project."
+      "description": "When true (the default), creates files at the top level of the project.\n\n如果为 true（默认值），则在项目的顶层创建文件。"
     },
     "skipTests": {
       "type": "boolean",
-      "description": "Do not create \"spec.ts\" test files for the new interceptor.",
+      "description": "Do not create \"spec.ts\" test files for the new interceptor.\n\n不要为新的拦截器创建 “spec.ts” 测试文件。",
       "default": false,
       "x-user-analytics": 12
     },
     "lintFix": {
       "type": "boolean",
-      "description": "Apply lint fixes after generating the interceptor.",
+      "description": "Apply lint fixes after generating the interceptor.\n\n生成此拦截器后，应用 lint 修复程序。",
       "x-user-analytics": 15,
-      "x-deprecated": "Use \"ng lint --fix\" directly instead."
+      "x-deprecated": "Use \"ng lint --fix\" directly instead.\n\n改为直接用 \"ng lint --fix\"。"
     }
   },
   "required": ["name"]

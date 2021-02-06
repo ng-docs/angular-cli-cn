@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/test.json",
-  "description": "Runs unit tests in a project.",
+  "descriptionEn": "Runs unit tests in a project.",
+  "description": "Runs unit tests in a project.\n\n运行某个项目中的单元测试。",
   "$longDescription": "./test-long.md",
 
   "$aliases": [ "t" ],

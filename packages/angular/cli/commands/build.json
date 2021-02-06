@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/build.json",
-  "description": "Compiles an Angular app into an output directory named dist/ at the given output path. Must be executed from within a workspace directory.",
+  "descriptionEn": "Compiles an Angular app into an output directory named dist/ at the given output path. Must be executed from within a workspace directory.",
+  "description": "Compiles an Angular app into an output directory named dist/ at the given output path. Must be executed from within a workspace directory.\n\n把 Angular 应用编译到给定输出路径下名为 dist/ 的输出目录中。此命令必须在工作空间目录下执行。",
   "$longDescription": "./build-long.md",
 
   "$aliases": [ "b" ],

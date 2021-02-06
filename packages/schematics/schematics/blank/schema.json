@@ -6,7 +6,7 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "The package name for the new schematic.",
+      "description": "The package name for the new schematic.\n\n新原理图的包名称。",
       "$default": {
         "$source": "argv",
         "index": 0
@@ -14,7 +14,7 @@
     },
     "author": {
       "type": "string",
-      "description": "Author for the new schematic."
+      "description": "Author for the new schematic.\n\n新原理图的作者。"
     }
   },
   "required": []

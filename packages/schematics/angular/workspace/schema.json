@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "name": {
-      "description": "The name of the workspace.",
+      "description": "The name of the workspace.\n\n工作区的名称。",
       "type": "string",
       "format": "html-selector",
       "$default": {
@@ -14,32 +14,32 @@
       }
     },
     "newProjectRoot": {
-      "description": "The path where new projects will be created.",
+      "description": "The path where new projects will be created.\n\n要创建的新项目的路径。",
       "type": "string",
       "visible": "false"
     },
     "version": {
       "type": "string",
-      "description": "The version of the Angular CLI to use.",
+      "description": "The version of the Angular CLI to use.\n\n要使用的 Angular CLI 版本。",
       "visible": false,
       "$default": {
         "$source": "ng-cli-version"
       }
     },
     "minimal": {
-      "description": "Create a workspace without any testing frameworks. (Use for learning purposes only.)",
+      "description": "Create a workspace without any testing frameworks. (Use for learning purposes only.)\n\n创建没有任何测试框架的工作空间。（仅用于学习目的。）",
       "type": "boolean",
       "default": false,
       "x-user-analytics": 14
     },
     "strict": {
-      "description": "Create a workspace with stricter type checking options. This setting helps improve maintainability and catch bugs ahead of time. For more information, see https://angular.io/strict",
+      "description": "Create a workspace with stricter type checking options. This setting helps improve maintainability and catch bugs ahead of time. For more information, see https://angular.io/strict\n\n创建一个带有更严格类型检查选项的工作空间。此设置有助于提升可维护性，并预先捕获 BUG。欲知详情，参见 https://angular.cn/strict",
       "type": "boolean",
       "default": false,
       "x-user-analytics": 7
     },
     "packageManager": {
-      "description": "The package manager used to install dependencies.",
+      "description": "The package manager used to install dependencies.\n\n用于安装依赖项的包管理器。",
       "type": "string",
       "enum": ["npm", "yarn", "pnpm", "cnpm"]
     }

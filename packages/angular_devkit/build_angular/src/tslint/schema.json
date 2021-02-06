@@ -1,15 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "TSlint Target",
-  "description": "TSlint target options for Build Facade.",
+  "description": "TSlint target options for Build Facade.\n\nTSlint 目标的构建选项。",
   "type": "object",
   "properties": {
     "tslintConfig": {
       "type": "string",
-      "description": "The name of the TSLint configuration file."
+      "description": "The name of the TSLint configuration file.\n\nTSLint 配置文件的名称。"
     },
     "tsConfig": {
-      "description": "The name of the TypeScript configuration file.",
+      "description": "The name of the TypeScript configuration file.\n\nTypeScript 配置文件的名称。",
       "oneOf": [
         { "type": "string" },
         {
@@ -22,27 +22,27 @@
     },
     "fix": {
       "type": "boolean",
-      "description": "Fixes linting errors (may overwrite linted files).",
+      "description": "Fixes linting errors (may overwrite linted files).\n\n修复 lint 错误（可能会覆盖被 lint 的文件）。",
       "default": false
     },
     "typeCheck": {
       "type": "boolean",
-      "description": "Controls the type check for linting.",
+      "description": "Controls the type check for linting.\n\n控制 lint 的类型检查。",
       "default": false
     },
     "force": {
       "type": "boolean",
-      "description": "Succeeds even if there was linting errors.",
+      "description": "Succeeds even if there was linting errors.\n\n即使出现 lint 错误也返回成功。",
       "default": false
     },
     "silent": {
       "type": "boolean",
-      "description": "Show output text.",
+      "description": "Show output text.\n\n显示输出文本。",
       "default": false
     },
     "format": {
       "type": "string",
-      "description": "Output format (prose, json, stylish, verbose, pmd, msbuild, checkstyle, vso, fileslist).",
+      "description": "Output format (prose, json, stylish, verbose, pmd, msbuild, checkstyle, vso, fileslist).\n\n输出格式（prose, json, stylish, verbose, pmd, msbuild, checkstyle, vso, fileslist）。",
       "default": "stylish",
       "anyOf": [
         {
@@ -66,7 +66,7 @@
     },
     "exclude": {
       "type": "array",
-      "description": "Files to exclude from linting.",
+      "description": "Files to exclude from linting.\n\n要在 lint 时排除的文件。",
       "default": [],
       "items": {
         "type": "string"
@@ -74,7 +74,7 @@
     },
     "files": {
       "type": "array",
-      "description": "Files to include in linting.",
+      "description": "Files to include in linting.\n\n要在 lint 时包含的文件。",
       "default": [],
       "items": {
         "type": "string"

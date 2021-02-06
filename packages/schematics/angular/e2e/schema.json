@@ -3,16 +3,16 @@
   "id": "SchematicsAngularE2eApp",
   "title": "Angular e2e Application Options Schema",
   "type": "object",
-  "description": "Generates a new, generic end-to-end test definition for the given or default project.",
+  "description": "Generates a new, generic end-to-end test definition for the given or default project.\n\n为给定或默认项目生成新的通用端到端测试定义。",
   "long-description": "e2e-long.md",
   "properties": {
     "rootSelector": {
-      "description": "The HTML selector for the root component of the test app.",
+      "description": "The HTML selector for the root component of the test app.\n\n测试应用程序根组件的 HTML 选择器。",
       "type": "string",
       "default": "app-root"
     },
     "relatedAppName": {
-      "description": "The name of the app being tested.",
+      "description": "The name of the app being tested.\n\n被测试的应用程序的名称。",
       "type": "string"
     }
   },

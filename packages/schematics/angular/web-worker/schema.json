@@ -3,29 +3,29 @@
   "id": "SchematicsAngularWebWorker",
   "title": "Angular Web Worker Options Schema",
   "type": "object",
-  "description": "Creates a new generic web worker definition in the given or default project.",
+  "description": "Creates a new generic web worker definition in the given or default project.\n\n在给定或默认项目中创建一个新的通用 Web Worker 定义。",
   "properties": {
     "path": {
       "type": "string",
       "format": "path",
-      "description": "The path at which to create the worker file, relative to the current workspace.",
+      "description": "The path at which to create the worker file, relative to the current workspace.\n\n要创建的 Web Worker 文件的路径。是相对于当前工作空间的。",
       "visible": false
     },
     "project": {
       "type": "string",
-      "description": "The name of the project.",
+      "description": "The name of the project.\n\n项目的名称。",
       "$default": {
         "$source": "projectName"
       }
     },
     "target": {
       "type": "string",
-      "description": "The target to apply web worker to.",
+      "description": "The target to apply web worker to.\n\n要应用 Web Worker 的目标。",
       "default": "build"
     },
     "name": {
       "type": "string",
-      "description": "The name of the worker.",
+      "description": "The name of the worker.\n\n此 Web Worker 的名字。",
       "$default": {
         "$source": "argv",
         "index": 0
@@ -35,7 +35,7 @@
     "snippet": {
       "type": "boolean",
       "default": true,
-      "description": "Add a worker creation snippet in a sibling file of the same name."
+      "description": "Add a worker creation snippet in a sibling file of the same name.\n\n在同名的同级文件中添加一个创建 Web Worker 的片段。"
     }
   },
   "required": [

@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/schema",
   "title": "Webpack browser schema for Build Facade.",
-  "description": "Browser target options",
+  "description": "Browser target options\n\n浏览器目标选项",
   "type": "object",
   "properties": {
     "assets": {
       "type": "array",
-      "description": "List of static application assets.",
+      "description": "List of static application assets.\n\n静态应用程序资产的列表。",
       "default": [],
       "items": {
         "$ref": "#/definitions/assetPattern"
@@ -14,19 +14,19 @@
     },
     "main": {
       "type": "string",
-      "description": "The full path for the main entry point to the app, relative to the current workspace.",
+      "description": "The full path for the main entry point to the app, relative to the current workspace.\n\n应用程序主入口点的完整路径。是相对于当前工作空间的。",
       "$valueDescription": "fileName"
     },
     "polyfills": {
       "type": "string",
-      "description": "The full path for the polyfills file, relative to the current workspace."
+      "description": "The full path for the polyfills file, relative to the current workspace.\n\npolyfills 文件的完整路径。是相对于当前工作空间的。"
     },
     "tsConfig": {
       "type": "string",
-      "description": "The full path for the TypeScript configuration file, relative to the current workspace."
+      "description": "The full path for the TypeScript configuration file, relative to the current workspace.\n\nTypeScript 配置文件相对于当前工作空间的完整路径。"
     },
     "scripts": {
-      "description": "Global scripts to be included in the build.",
+      "description": "Global scripts to be included in the build.\n\n要包含在构建中的全局脚本。",
       "type": "array",
       "default": [],
       "items": {
@@ -34,7 +34,7 @@
       }
     },
     "styles": {
-      "description": "Global styles to be included in the build.",
+      "description": "Global styles to be included in the build.\n\n要包含在构建中的全局样式。",
       "type": "array",
       "default": [],
       "items": {
@@ -42,11 +42,11 @@
       }
     },
     "stylePreprocessorOptions": {
-      "description": "Options to pass to style preprocessors.",
+      "description": "Options to pass to style preprocessors.\n\n要传递给样式预处理器的选项。",
       "type": "object",
       "properties": {
         "includePaths": {
-          "description": "Paths to include. Paths will be resolved to project root.",
+          "description": "Paths to include. Paths will be resolved to project root.\n\n要包含的路径。这些路径会基于项目的根目录进行解析。",
           "type": "array",
           "items": {
             "type": "string"
@@ -57,7 +57,7 @@
       "additionalProperties": false
     },
     "optimization": {
-      "description": "Enables optimization of the build output. Including minification of scripts and styles, tree-shaking, dead-code elimination, inlining of critical CSS and fonts inlining. For more information, see https://angular.io/guide/workspace-config#optimization-configuration.",
+      "description": "Enables optimization of the build output. Including minification of scripts and styles, tree-shaking, dead-code elimination, inlining of critical CSS and fonts inlining. For more information, see https://angular.io/guide/workspace-config#optimization-configuration.\n\n启用构建输出的优化。包括脚本和样式的最小化、摇树优化、消除死代码、内联关键 CSS 和内联字体等。欲知详情，请参阅</guide/workspace-config#optimization-configuration>。",
       "x-user-analytics": 16,
       "default": false,
       "oneOf": [
@@ -66,11 +66,11 @@
           "properties": {
             "scripts": {
               "type": "boolean",
-              "description": "Enables optimization of the scripts output.",
+              "description": "Enables optimization of the scripts output.\n\n启用脚本输出的优化。",
               "default": true
             },
             "styles": {
-              "description": "Enables optimization of the styles output.",
+              "description": "Enables optimization of the styles output.\n\n启用样式输出的优化。",
               "default": true,
               "oneOf": [
                 {
@@ -78,12 +78,12 @@
                   "properties": {
                     "minify": {
                       "type": "boolean",
-                      "description": "Minify CSS definitions by removing extraneous whitespace and comments, merging identifiers and minimizing values.",
+                      "description": "Minify CSS definitions by removing extraneous whitespace and comments, merging identifiers and minimizing values.\n\n通过删除多余的空格和注释、合并标识符，以及将值最小化来将 CSS 定义最小化。",
                       "default": true
                     },
                     "inlineCritical": {
                       "type": "boolean",
-                      "description": "Extract and inline critical CSS definitions to improve first paint time.",
+                      "description": "Extract and inline critical CSS definitions to improve first paint time.\n\n提取并内联关键 CSS 定义以缩短首次绘制时间。",
                       "default": false
                     }
                   },
@@ -95,7 +95,7 @@
               ]
             },
             "fonts": {
-              "description": "Enables optimization for fonts. This option requires internet access. `HTTPS_PROXY` environment variable can be used to specify a proxy server.",
+              "description": "Enables optimization for fonts. This option requires internet access. `HTTPS_PROXY` environment variable can be used to specify a proxy server.\n\n启用字体优化。此选项需要访问互联网。`HTTPS_PROXY` 环境变量可用于指定代理服务器。",
               "default": true,
               "oneOf": [
                 {
@@ -103,7 +103,7 @@
                   "properties": {
                     "inline": {
                       "type": "boolean",
-                      "description": "Reduce render blocking requests by inlining external Google fonts and icons CSS definitions in the application's HTML index file. This option requires internet access. `HTTPS_PROXY` environment variable can be used to specify a proxy server.",
+                      "description": "Reduce render blocking requests by inlining external Google fonts and icons CSS definitions in the application's HTML index file. This option requires internet access. `HTTPS_PROXY` environment variable can be used to specify a proxy server.\n\n通过在应用 index.html 文件中内联外部 Google 字体和图标 CSS 定义，来减少会阻塞渲染的请求。此选项需要访问互联网。可以用环境变量 `HTTPS_PROXY` 指定代理服务器。",
                       "default": true
                     }
                   },
@@ -123,7 +123,7 @@
       ]
     },
     "fileReplacements": {
-      "description": "Replace compilation source files with other compilation source files in the build.",
+      "description": "Replace compilation source files with other compilation source files in the build.\n\n用构建中的其他编译源文件替换编译源文件。",
       "type": "array",
       "items": {
         "$ref": "#/definitions/fileReplacement"
@@ -132,21 +132,21 @@
     },
     "outputPath": {
       "type": "string",
-      "description": "The full path for the new output directory, relative to the current workspace.\n\nBy default, writes output to a folder named dist/ in the current project."
+      "description": "The full path for the new output directory, relative to the current workspace.\n\n新输出目录的完整路径，是相对于当前工作空间的。\n\nBy default, writes output to a folder named dist/ in the current project.\n\n默认情况下，会将输出写入当前项目中名为 dist/ 的文件夹。"
     },
     "resourcesOutputPath": {
       "type": "string",
-      "description": "The path where style resources will be placed, relative to outputPath.",
+      "description": "The path where style resources will be placed, relative to outputPath.\n\n放置样式资源的路径，是相对于 outputPath 的。",
       "default": ""
     },
     "aot": {
       "type": "boolean",
-      "description": "Build using Ahead of Time compilation.",
+      "description": "Build using Ahead of Time compilation.\n\n使用预先编译模式进行构建。",
       "x-user-analytics": 13,
       "default": false
     },
     "sourceMap": {
-      "description": "Output source maps for scripts and styles. For more information, see https://angular.io/guide/workspace-config#source-map-configuration.",
+      "description": "Output source maps for scripts and styles. For more information, see https://angular.io/guide/workspace-config#source-map-configuration.\n\n输出脚本和样式的源码映射信息。欲知详情，请参阅</guide/workspace-config#source-map-configuration>。",
       "default": true,
       "oneOf": [
         {
@@ -154,22 +154,22 @@
           "properties": {
             "scripts": {
               "type": "boolean",
-              "description": "Output source maps for all scripts.",
+              "description": "Output source maps for all scripts.\n\n输出所有脚本的源码映射信息。",
               "default": true
             },
             "styles": {
               "type": "boolean",
-              "description": "Output source maps for all styles.",
+              "description": "Output source maps for all styles.\n\n输出所有样式的源码映射信息。",
               "default": true
             },
             "hidden": {
               "type": "boolean",
-              "description": "Output source maps used for error reporting tools.",
+              "description": "Output source maps used for error reporting tools.\n\n输出用于错误报告工具的源码映射信息。",
               "default": false
             },
             "vendor": {
               "type": "boolean",
-              "description": "Resolve vendor packages source maps.",
+              "description": "Resolve vendor packages source maps.\n\n是否解析来自供应商包的源码映射信息。",
               "default": false
             }
           },
@@ -182,63 +182,63 @@
     },
     "vendorChunk": {
       "type": "boolean",
-      "description": "Generate a seperate bundle containing only vendor libraries. This option should only used for development.",
+      "description": "Generate a seperate bundle containing only vendor libraries. This option should only used for development.\n\n生成仅包含供应商库的单独捆绑包。此选项只能用于开发阶段。",
       "default": true
     },
     "commonChunk": {
       "type": "boolean",
-      "description": "Generate a seperate bundle containing code used across multiple bundles.",
+      "description": "Generate a seperate bundle containing code used across multiple bundles.\n\n生成一个单独的捆绑包，其中包含跨多个捆绑包使用的代码。",
       "default": true
     },
     "baseHref": {
       "type": "string",
-      "description": "Base url for the application being built."
+      "description": "Base url for the application being built.\n\n正在构建的应用程序的 base URL。"
     },
     "deployUrl": {
       "type": "string",
-      "description": "URL where files will be deployed."
+      "description": "URL where files will be deployed.\n\n文件将部署到的 URL。"
     },
     "verbose": {
       "type": "boolean",
-      "description": "Adds more details to output logging.",
+      "description": "Adds more details to output logging.\n\n将更多详细信息添加到输出日志记录。",
       "default": false
     },
     "progress": {
       "type": "boolean",
-      "description": "Log progress to the console while building.",
+      "description": "Log progress to the console while building.\n\n在构建时将进度记录到控制台。",
       "default": true
     },
     "i18nFile": {
       "type": "string",
-      "description": "Localization file to use for i18n.",
-      "x-deprecated": "Use 'locales' object in the project metadata instead."
+      "description": "Localization file to use for i18n.\n\n用于 i18n 的本地化文件。",
+      "x-deprecated": "Use 'locales' object in the project metadata instead.\n\n改用项目元数据中的 'locales' 对象代替。"
     },
     "i18nFormat": {
       "type": "string",
-      "description": "Format of the localization file specified with --i18n-file.",
-      "x-deprecated": "No longer needed as the format will be determined automatically."
+      "description": "Format of the localization file specified with --i18n-file.\n\n用 --i18n-file 指定的本地化文件的格式。",
+      "x-deprecated": "No longer needed as the format will be determined automatically.\n\n不需要了，因为现在会自动确定格式。"
     },
     "i18nLocale": {
       "type": "string",
-      "description": "Locale to use for i18n.",
-      "x-deprecated": "Use 'localize' instead."
+      "description": "Locale to use for i18n.\n\n用于 i18n 的语言环境。",
+      "x-deprecated": "Use 'localize' instead.\n\n使用 'localize' 代替。"
     },
     "i18nMissingTranslation": {
       "type": "string",
-      "description": "How to handle missing translations for i18n.",
+      "description": "How to handle missing translations for i18n.\n\ni18n 要如何处理缺失翻译。",
       "enum": ["warning", "error", "ignore"],
       "default": "warning"
     },
     "localize": {
-      "description": "Translate the bundles in one or more locales.",
+      "description": "Translate the bundles in one or more locales.\n\n在一个或多个语言环境下翻译这些包。",
       "oneOf": [
         {
           "type": "boolean",
-          "description": "Translate all locales."
+          "description": "Translate all locales.\n\n翻译所有语言环境。"
         },
         {
           "type": "array",
-          "description": "List of locales ID's to translate.",
+          "description": "List of locales ID's to translate.\n\n要翻译的语言环境 ID 列表。",
           "minItems": 1,
           "items": {
             "type": "string",
@@ -249,18 +249,18 @@
     },
     "extractCss": {
       "type": "boolean",
-      "description": "Extract CSS from global styles into '.css' files instead of '.js'.",
+      "description": "Extract CSS from global styles into '.css' files instead of '.js'.\n\n从全局样式中将 CSS 提取到 “.css”文件而不是 “.js”文件中。",
       "default": true,
-      "x-deprecated": "Deprecated since version 11.0. No longer required to disable CSS extraction for HMR."
+      "x-deprecated": "Deprecated since version 11.0. No longer required to disable CSS extraction for HMR.\n\n从 11.0 开始已弃用。因为 HMR 要禁用 CSS 提取，所以不需要了。"
     },
     "watch": {
       "type": "boolean",
-      "description": "Run build when files change.",
+      "description": "Run build when files change.\n\n当文件更改时自动构建。",
       "default": false
     },
     "outputHashing": {
       "type": "string",
-      "description": "Define the output filename cache-busting hashing mode.",
+      "description": "Define the output filename cache-busting hashing mode.\n\n定义输出文件名的缓存无效哈希（cache-busting hashing）的模式。",
       "default": "none",
       "enum": [
         "none",
@@ -271,57 +271,57 @@
     },
     "poll": {
       "type": "number",
-      "description": "Enable and define the file watching poll time period in milliseconds."
+      "description": "Enable and define the file watching poll time period in milliseconds.\n\n启用并定义文件监视的轮询间隔（以毫秒为单位）。"
     },
     "deleteOutputPath": {
       "type": "boolean",
-      "description": "Delete the output path before building.",
+      "description": "Delete the output path before building.\n\n在构建之前，删除输出路径。",
       "default": true
     },
     "preserveSymlinks": {
       "type": "boolean",
-      "description": "Do not use the real path when resolving modules. If unset then will default to `true` if NodeJS option --preserve-symlinks is set."
+      "description": "Do not use the real path when resolving modules. If unset then will default to `true` if NodeJS option --preserve-symlinks is set.\n\n当解析模块时，不要使用真实路径。如果未设置，则如果 NodeJS 启用了 --preserve-symlinks 选项，就默认为 `true`。"
     },
     "extractLicenses": {
       "type": "boolean",
-      "description": "Extract all licenses in a separate file.",
+      "description": "Extract all licenses in a separate file.\n\n将所有许可证（license）提取到一个单独的文件中。",
       "default": false
     },
     "showCircularDependencies": {
       "type": "boolean",
-      "description": "Show circular dependency warnings on builds.",
+      "description": "Show circular dependency warnings on builds.\n\n在构建中显示循环依赖项警告。",
       "default": true
     },
     "buildOptimizer": {
       "type": "boolean",
-      "description": "Enables '@angular-devkit/build-optimizer' optimizations when using the 'aot' option.",
+      "description": "Enables '@angular-devkit/build-optimizer' optimizations when using the 'aot' option.\n\n当使用 'aot' 选项时启用 '@angular-devkit/build-optimizer' 优化。",
       "default": false
     },
     "namedChunks": {
       "type": "boolean",
-      "description": "Use file name for lazy loaded chunks.",
+      "description": "Use file name for lazy loaded chunks.\n\n对于惰性加载的块，使用文件名进行命名。",
       "default": true
     },
     "subresourceIntegrity": {
       "type": "boolean",
-      "description": "Enables the use of subresource integrity validation.",
+      "description": "Enables the use of subresource integrity validation.\n\n启用子资源完整性验证。",
       "default": false
     },
     "serviceWorker": {
       "type": "boolean",
-      "description": "Generates a service worker config for production builds.",
+      "description": "Generates a service worker config for production builds.\n\n在生产环境构建中生成 Service Worker 配置。",
       "default": false
     },
     "ngswConfigPath": {
       "type": "string",
-      "description": "Path to ngsw-config.json."
+      "description": "Path to ngsw-config.json.\n\nngsw-config.json 的路径。"
     },
     "index": {
-      "description": "Configures the generation of the application's HTML index.",
+      "description": "Configures the generation of the application's HTML index.\n\n配置应用程序的 index.html 的生成方式。",
       "oneOf": [
         {
           "type": "string",
-          "description": "The path of a file to use for the application's HTML index. The filename of the specified path will be used for the generated file and will be created in the root of the application's configured output path."
+          "description": "The path of a file to use for the application's HTML index. The filename of the specified path will be used for the generated file and will be created in the root of the application's configured output path.\n\n用于应用程序的 index.html 文件的路径。指定路径的文件名将用于生成的文件，并创建在应用程序配置的输出路径的根目录中。"
         },
         {
           "type": "object",
@@ -330,13 +330,13 @@
             "input": {
               "type": "string",
               "minLength": 1,
-              "description": "The path of a file to use for the application's generated HTML index."
+              "description": "The path of a file to use for the application's generated HTML index.\n\n用于应用程序生成的 index.html 文件的路径。"
             },
             "output": {
               "type": "string",
               "minLength": 1,
               "default": "index.html",
-              "description": "The output path of the application's generated HTML index file. The full provided path will be used and will be considered relative to the application's configured output path."
+              "description": "The output path of the application's generated HTML index file. The full provided path will be used and will be considered relative to the application's configured output path.\n\n应用程序生成的 index.html 的输出路径。将使用完整提供的路径，并将其视为相对于应用程序配置的输出路径。"
             }
           },
           "required": ["input"]
@@ -345,25 +345,25 @@
     },
     "statsJson": {
       "type": "boolean",
-      "description": "Generates a 'stats.json' file which can be analyzed using tools such as 'webpack-bundle-analyzer'.",
+      "description": "Generates a 'stats.json' file which can be analyzed using tools such as 'webpack-bundle-analyzer'.\n\n生成一个 “stats.json” 文件，可以使用 “webpack-bundle-analyzer” 之类的工具进行分析。",
       "default": false
     },
     "forkTypeChecker": {
       "type": "boolean",
-      "description": "Run the TypeScript type checker in a forked process.",
+      "description": "Run the TypeScript type checker in a forked process.\n\n在子进程（forked process）中运行 TypeScript 类型检查器。",
       "default": true
     },
     "lazyModules": {
-      "description": "List of additional NgModule files that will be lazy loaded. Lazy router modules will be discovered automatically.",
+      "description": "List of additional NgModule files that will be lazy loaded. Lazy router modules will be discovered automatically.\n\n要惰性加载的其他 NgModule 文件的列表。那些惰性加载的路由模块会自动发现，不用在这里添加。",
       "type": "array",
       "items": {
         "type": "string"
       },
-      "x-deprecated": "'SystemJsNgModuleLoader' is deprecated, and this is part of its usage. Use 'import()' syntax instead.",
+      "x-deprecated": "'SystemJsNgModuleLoader' is deprecated, and this is part of its usage. Use 'import()' syntax instead.\n\n'SystemJsNgModuleLoader' 已弃用，这是它的一部分。用 'import()' 语法代替。",
       "default": []
     },
     "budgets": {
-      "description": "Budget thresholds to ensure parts of your application stay within boundaries which you set.",
+      "description": "Budget thresholds to ensure parts of your application stay within boundaries which you set.\n\n预算的阈值，以确保你的应用程序的各个部分保持在你设置的界限内。",
       "type": "array",
       "items": {
         "$ref": "#/definitions/budget"
@@ -372,11 +372,11 @@
     },
     "webWorkerTsConfig": {
       "type": "string",
-      "description": "TypeScript configuration for Web Worker modules."
+      "description": "TypeScript configuration for Web Worker modules.\n\nWeb Worker 模块的 TypeScript 配置。"
     },
     "crossOrigin": {
       "type": "string",
-      "description": "Define the crossorigin attribute setting of elements that provide CORS support.",
+      "description": "Define the crossorigin attribute setting of elements that provide CORS support.\n\n定义提供 CORS 支持的元素的 crossorigin 属性设置。",
       "default": "none",
       "enum": [
         "none",
@@ -386,11 +386,11 @@
     },
     "experimentalRollupPass": {
       "type": "boolean",
-      "description": "Concatenate modules with Rollup before bundling them with Webpack.",
+      "description": "Concatenate modules with Rollup before bundling them with Webpack.\n\n在用 Webpack 对一些模块进行打包之前，先用 Rollup 把它们连成一个文件。",
       "default": false
     },
     "allowedCommonJsDependencies": {
-      "description": "A list of CommonJS packages that are allowed to be used without a build time warning.",
+      "description": "A list of CommonJS packages that are allowed to be used without a build time warning.\n\n允许在没有构建期警告的前提下使用的 CommonJS 软件包列表。",
       "type": "array",
       "items": {
         "type": "string"
@@ -414,18 +414,18 @@
             "followSymlinks": {
               "type": "boolean",
               "default": false,
-              "description": "Allow glob patterns to follow symlink directories. This allows subdirectories of the symlink to be searched."
+              "description": "Allow glob patterns to follow symlink directories. This allows subdirectories of the symlink to be searched.\n\n允许 glob 模式跟踪符号链接目录。这允许搜索符号链接到的子目录。"
             },
             "glob": {
               "type": "string",
-              "description": "The pattern to match."
+              "description": "The pattern to match.\n\n要匹配的模式。"
             },
             "input": {
               "type": "string",
-              "description": "The input directory path in which to apply 'glob'. Defaults to the project root."
+              "description": "The input directory path in which to apply 'glob'. Defaults to the project root.\n\n要应用 'glob' 的输入目录路径。默认为此项目的根目录。"
             },
             "ignore": {
-              "description": "An array of globs to ignore.",
+              "description": "An array of globs to ignore.\n\n要忽略的 glob 数组。",
               "type": "array",
               "items": {
                 "type": "string"
@@ -433,7 +433,7 @@
             },
             "output": {
               "type": "string",
-              "description": "Absolute path within the output."
+              "description": "Absolute path within the output.\n\n输出目录下的绝对路径。"
             }
           },
           "additionalProperties": false,
@@ -495,15 +495,15 @@
           "properties": {
             "input": {
               "type": "string",
-              "description": "The file to include."
+              "description": "The file to include.\n\n要包含的文件。"
             },
             "bundleName": {
               "type": "string",
-              "description": "The bundle name for this extra entry point."
+              "description": "The bundle name for this extra entry point.\n\n此额外入口点的捆绑包名称。"
             },
             "inject": {
               "type": "boolean",
-              "description": "If the bundle will be referenced in the HTML file.",
+              "description": "If the bundle will be referenced in the HTML file.\n\n是否要在 HTML 文件中引用该捆绑包。",
               "default": true
             }
           },
@@ -514,7 +514,7 @@
         },
         {
           "type": "string",
-          "description": "The file to include."
+          "description": "The file to include.\n\n要包含的文件。"
         }
       ]
     },
@@ -523,7 +523,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "description": "The type of budget.",
+          "description": "The type of budget.\n\n预算类型。",
           "enum": [
             "all",
             "allScript",
@@ -536,35 +536,35 @@
         },
         "name": {
           "type": "string",
-          "description": "The name of the bundle."
+          "description": "The name of the bundle.\n\n捆绑包的名称。"
         },
         "baseline": {
           "type": "string",
-          "description": "The baseline size for comparison."
+          "description": "The baseline size for comparison.\n\n用于比较的基线大小。"
         },
         "maximumWarning": {
           "type": "string",
-          "description": "The maximum threshold for warning relative to the baseline."
+          "description": "The maximum threshold for warning relative to the baseline.\n\n相对于基线的最大警告阈值。"
         },
         "maximumError": {
           "type": "string",
-          "description": "The maximum threshold for error relative to the baseline."
+          "description": "The maximum threshold for error relative to the baseline.\n\n相对于基线的最大错误阈值。"
         },
         "minimumWarning": {
           "type": "string",
-          "description": "The minimum threshold for warning relative to the baseline."
+          "description": "The minimum threshold for warning relative to the baseline.\n\n相对于基线的最小警告阈值。"
         },
         "minimumError": {
           "type": "string",
-          "description": "The minimum threshold for error relative to the baseline."
+          "description": "The minimum threshold for error relative to the baseline.\n\n相对于基线的最小错误阈值。"
         },
         "warning": {
           "type": "string",
-          "description": "The threshold for warning relative to the baseline (min & max)."
+          "description": "The threshold for warning relative to the baseline (min & max).\n\n相对于基线的警告阈值（最小和最大）。"
         },
         "error": {
           "type": "string",
-          "description": "The threshold for error relative to the baseline (min & max)."
+          "description": "The threshold for error relative to the baseline (min & max).\n\n相对于基线的错误阈值（最小和最大）。"
         }
       },
       "additionalProperties": false,

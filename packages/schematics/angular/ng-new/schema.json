@@ -6,10 +6,10 @@
   "properties": {
     "directory": {
       "type": "string",
-      "description": "The directory name to create the workspace in."
+      "description": "The directory name to create the workspace in.\n\n要在其中创建工作空间的目录名称。"
     },
     "name": {
-      "description": "The name of the new workspace and initial project.",
+      "description": "The name of the new workspace and initial project.\n\n新工作空间和初始项目的名称。",
       "type": "string",
       "format": "html-selector",
       "$default": {
@@ -19,24 +19,24 @@
       "x-prompt": "What name would you like to use for the new workspace and initial project?"
     },
     "skipInstall": {
-      "description": "Do not install dependency packages.",
+      "description": "Do not install dependency packages.\n\n不要安装依赖包。",
       "type": "boolean",
       "default": false
     },
     "linkCli": {
-      "description": "Link the CLI to the global version (internal development only).",
+      "description": "Link the CLI to the global version (internal development only).\n\n将 CLI 链接到全局版本（仅用于内部开发）。",
       "type": "boolean",
       "default": false,
       "visible": false
     },
     "skipGit": {
-      "description": "Do not initialize a git repository.",
+      "description": "Do not initialize a git repository.\n\n不要初始化 git 仓库。",
       "type": "boolean",
       "default": false,
       "alias": "g"
     },
     "commit": {
-      "description": "Initial git repository commit information.",
+      "description": "Initial git repository commit information.\n\n初始 git 仓库提交信息。",
       "oneOf": [
         { "type": "boolean" },
         {
@@ -59,31 +59,31 @@
       "default": true
     },
     "newProjectRoot": {
-      "description": "The path where new projects will be created, relative to the new workspace root.",
+      "description": "The path where new projects will be created, relative to the new workspace root.\n\n要创建的新项目的路径。是相对于新工作空间根目录的。",
       "type": "string",
       "default": "projects"
     },
     "inlineStyle": {
-      "description": "Include styles inline in the component TS file. By default, an external styles file is created and referenced in the component TypeScript file.",
+      "description": "Include styles inline in the component TS file. By default, an external styles file is created and referenced in the component TypeScript file.\n\n在组件 TS 文件中包含内联样式。默认情况下，将创建一个外部样式文件，并在组件 TypeScript 文件中对其进行引用。",
       "type": "boolean",
       "alias": "s",
       "x-user-analytics": 9
     },
     "inlineTemplate": {
-      "description": "Include template inline in the component TS file. By default, an external template file is created and referenced in the component TypeScript file.",
+      "description": "Include template inline in the component TS file. By default, an external template file is created and referenced in the component TypeScript file.\n\n在组件 TS 文件中包含内联模板。默认情况下，将创建一个外部模板文件，并在组件 TypeScript 文件中对其进行引用。",
       "type": "boolean",
       "alias": "t",
       "x-user-analytics": 10
     },
     "viewEncapsulation": {
-      "description": "The view encapsulation strategy to use in the initial project.",
+      "description": "The view encapsulation strategy to use in the initial project.\n\n用在初始项目中的视图封装策略。",
       "enum": ["Emulated", "Native", "None", "ShadowDom"],
       "type": "string",
       "x-user-analytics": 11
     },
     "version": {
       "type": "string",
-      "description": "The version of the Angular CLI to use.",
+      "description": "The version of the Angular CLI to use.\n\n要使用的 Angular CLI 版本。",
       "visible": false,
       "$default": {
         "$source": "ng-cli-version"
@@ -91,43 +91,43 @@
     },
     "routing": {
       "type": "boolean",
-      "description": "Generate a routing module for the initial project.",
+      "description": "Generate a routing module for the initial project.\n\n为初始项目生成一个路由模块。",
       "x-user-analytics": 17
     },
     "prefix": {
       "type": "string",
       "format": "html-selector",
-      "description": "The prefix to apply to generated selectors for the initial project.",
+      "description": "The prefix to apply to generated selectors for the initial project.\n\n适用于初始项目的生成选择器的前缀。",
       "minLength": 1,
       "default": "app",
       "alias": "p"
     },
     "style": {
-      "description": "The file extension or preprocessor to use for style files.",
+      "description": "The file extension or preprocessor to use for style files.\n\n用于样式文件的扩展名/预处理器。",
       "type": "string",
       "enum": ["css", "scss", "sass", "less", "styl"],
       "x-user-analytics": 5
     },
     "skipTests": {
-      "description": "Do not generate \"spec.ts\" test files for the new project.",
+      "description": "Do not generate \"spec.ts\" test files for the new project.\n\n不要为新项目生成 “spec.ts” 测试文件。",
       "type": "boolean",
       "default": false,
       "alias": "S",
       "x-user-analytics": 12
     },
     "createApplication": {
-      "description": "Create a new initial application project in the 'src' folder of the new workspace. When false, creates an empty workspace with no initial application. You can then use the generate application command so that all applications are created in the projects folder.",
+      "description": "Create a new initial application project in the 'src' folder of the new workspace. When false, creates an empty workspace with no initial application. You can then use the generate application command so that all applications are created in the projects folder.\n\n在新工作区的 “src” 文件夹中创建一个新的初始应用程序项目。如果为 false，则会创建一个没有初始应用程序的空工作空间。然后，你可以使用 generate application 命令，以便让所有应用程序都创建在自己的项目文件夹中。",
       "type": "boolean",
       "default": true
     },
     "minimal": {
-      "description": "Create a workspace without any testing frameworks. (Use for learning purposes only.)",
+      "description": "Create a workspace without any testing frameworks. (Use for learning purposes only.)\n\n创建没有任何测试框架的工作空间。（仅用于学习目的。）",
       "type": "boolean",
       "default": false,
       "x-user-analytics": 14
     },
     "strict": {
-      "description": "Creates a workspace with stricter type checking and stricter bundle budgets settings. This setting helps improve maintainability and catch bugs ahead of time. For more information, see https://angular.io/guide/strict-mode",
+      "description": "Creates a workspace with stricter type checking and stricter bundle budgets settings. This setting helps improve maintainability and catch bugs ahead of time. For more information, see https://angular.io/guide/strict-mode\n\n创建带有更严格类型检查和更严格捆绑包预算设置的工作空间。此设置有助于提升可维护性，并预先捕获 BUG。欲知详情，参见 https://angular.cn/guide/strict-mode",
       "x-prompt": "Do you want to enforce stricter type checking and stricter bundle budgets in the workspace?\n  This setting helps improve maintainability and catch bugs ahead of time.\n  For more information, see https://angular.io/strict",
       "type": "boolean",
       "default": false,
@@ -135,11 +135,11 @@
     },
     "legacyBrowsers": {
       "type": "boolean",
-      "description": "Add support for legacy browsers like Internet Explorer using differential loading.",
+      "description": "Add support for legacy browsers like Internet Explorer using differential loading.\n\n使用差异化加载添加对 Internet Explorer 等旧版浏览器的支持。",
       "default": false
     },
     "packageManager": {
-      "description": "The package manager used to install dependencies.",
+      "description": "The package manager used to install dependencies.\n\n用于安装依赖项的包管理器。",
       "type": "string",
       "enum": ["npm", "yarn", "pnpm", "cnpm"]
     }

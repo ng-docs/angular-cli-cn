@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/version.json",
-  "description": "Outputs Angular CLI version.",
+  "descriptionEn": "Outputs Angular CLI version.",
+  "description": "Outputs Angular CLI version.\n\n输出 Angular CLI 的版本。",
   "$longDescription": "",
 
   "$aliases": [ "v" ],

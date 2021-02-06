@@ -1,56 +1,56 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "Protractor Target",
-  "description": "Protractor target options for Build Facade.",
+  "description": "Protractor target options for Build Facade.\n\nProtractor 目标的构建选项。",
   "type": "object",
   "properties": {
     "protractorConfig": {
       "type": "string",
-      "description": "The name of the Protractor configuration file."
+      "description": "The name of the Protractor configuration file.\n\nProtractor 配置文件的名称。"
     },
     "devServerTarget": {
       "type": "string",
-      "description": "A dev-server builder target to run tests against in the format of `project:target[:configuration]`. You can also pass in more than one configuration name as a comma-separated list. Example: `project:target:production,staging`.",
+      "description": "A dev-server builder target to run tests against in the format of `project:target[:configuration]`. You can also pass in more than one configuration name as a comma-separated list. Example: `project:target:production,staging`.\n\n一个开发服务器构建器目标，用来以 `project:target[:configuration]` 的格式针对其运行测试。你还可以传入逗号分隔的多个配置名称列表。例如：`project:target:production,staging`。",
       "pattern": "^([^:\\s]+:[^:\\s]+(:[^\\s]+)?)?$"
     },
     "grep": {
       "type": "string",
-      "description": "Execute specs whose names match the pattern, which is internally compiled to a RegExp."
+      "description": "Execute specs whose names match the pattern, which is internally compiled to a RegExp.\n\n执行名称与模式匹配的规约，该模式在内部编译为 RegExp。"
     },
     "invertGrep": {
       "type": "boolean",
-      "description": "Invert the selection specified by the 'grep' option.",
+      "description": "Invert the selection specified by the 'grep' option.\n\n反转 “grep” 选项指定的选择。",
       "default": false
     },
     "specs": {
       "type": "array",
-      "description": "Override specs in the protractor config.",
+      "description": "Override specs in the protractor config.\n\n覆盖 Protractor 配置中的规约。",
       "default": [],
       "items": {
         "type": "string",
-        "description": "Spec name."
+        "description": "Spec name.\n\n规约名称。"
       }
     },
     "suite": {
       "type": "string",
-      "description": "Override suite in the protractor config."
+      "description": "Override suite in the protractor config.\n\n覆盖 Protractor 配置中测试套件。"
     },
     "webdriverUpdate": {
       "type": "boolean",
-      "description": "Try to update webdriver.",
+      "description": "Try to update webdriver.\n\n尝试更新 webdriver。",
       "default": true
     },
     "port": {
       "type": "number",
-      "description": "The port to use to serve the application."
+      "description": "The port to use to serve the application.\n\n用来启动应用服务器的端口。"
     },
     "host": {
       "type": "string",
-      "description": "Host to listen on."
+      "description": "Host to listen on.\n\n要监听的主机。"
     },
     "baseUrl": {
       "type": "string",
-      "description": "Base URL for protractor to connect to."
+      "description": "Base URL for protractor to connect to.\n\nProtractor 要连接的 base URL。"
     }
   },
   "additionalProperties": false,

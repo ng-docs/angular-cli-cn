@@ -3,11 +3,11 @@
   "id": "SchematicsAngularResolver",
   "title": "Angular resolver Options Schema",
   "type": "object",
-  "description": "Generates a new, generic resolver definition in the given or default project.",
+  "description": "Generates a new, generic resolver definition in the given or default project.\n\n在给定或默认项目中生成新的通用解析程序定义。",
   "properties": {
     "name": {
       "type": "string",
-      "description": "The name of the new resolver.",
+      "description": "The name of the new resolver.\n\n新解析器的名称。",
       "$default": {
         "$source": "argv",
         "index": 0
@@ -16,24 +16,24 @@
     },
     "skipTests": {
       "type": "boolean",
-      "description": "Do not create \"spec.ts\" test files for the new resolver.",
+      "description": "Do not create \"spec.ts\" test files for the new resolver.\n\n不要为新的解析器创建 “spec.ts” 测试文件。",
       "default": false,
       "x-user-analytics": 12
     },
     "flat": {
       "type": "boolean",
-      "description": "When true (the default), creates the new files at the top level of the current project.",
+      "description": "When true (the default), creates the new files at the top level of the current project.\n\n如果为 true（默认值），则在当前项目的顶层创建新文件。",
       "default": true
     },
     "path": {
       "type": "string",
       "format": "path",
-      "description": "The path at which to create the interface that defines the resolver, relative to the current workspace.",
+      "description": "The path at which to create the interface that defines the resolver, relative to the current workspace.\n\n用于创建定义解析器的接口的路径。是相对于当前工作空间的。",
       "visible": false
     },
     "project": {
       "type": "string",
-      "description": "The name of the project.",
+      "description": "The name of the project.\n\n项目的名称。",
       "$default": {
         "$source": "projectName"
       }

@@ -3,11 +3,11 @@
   "id": "SchematicsAngularDirective",
   "title": "Angular Directive Options Schema",
   "type": "object",
-  "description": "Creates a new generic directive definition in the given or default project.",
+  "description": "Creates a new generic directive definition in the given or default project.\n\n在给定或默认项目中创建一个新的通用指令定义。",
   "properties": {
     "name": {
       "type": "string",
-      "description": "The name of the new directive.",
+      "description": "The name of the new directive.\n\n新指令的名称。",
       "$default": {
         "$source": "argv",
         "index": 0
@@ -17,19 +17,19 @@
     "path": {
       "type": "string",
       "format": "path",
-      "description": "The path at which to create the interface that defines the directive, relative to the workspace root.",
+      "description": "The path at which to create the interface that defines the directive, relative to the workspace root.\n\n用于创建定义指令的接口的路径。是相对于工作区根目录的。",
       "visible": false
     },
     "project": {
       "type": "string",
-      "description": "The name of the project.",
+      "description": "The name of the project.\n\n项目的名称。",
       "$default": {
         "$source": "projectName"
       }
     },
     "prefix": {
       "type": "string",
-      "description": "A prefix to apply to generated selectors.",
+      "description": "A prefix to apply to generated selectors.\n\n用于生成选择器的前缀。",
       "alias": "p",
       "oneOf": [
         {
@@ -43,42 +43,42 @@
     },
     "skipTests": {
       "type": "boolean",
-      "description": "Do not create \"spec.ts\" test files for the new class.",
+      "description": "Do not create \"spec.ts\" test files for the new class.\n\n不要为新类创建 “spec.ts” 测试文件。",
       "default": false,
       "x-user-analytics": 12
     },
     "skipImport": {
       "type": "boolean",
-      "description": "Do not import this directive into the owning NgModule.",
+      "description": "Do not import this directive into the owning NgModule.\n\n不要将此指令导入到所属的 NgModule 中。",
       "default": false,
       "x-user-analytics": 18
     },
     "selector": {
       "type": "string",
       "format": "html-selector",
-      "description": "The HTML selector to use for this directive."
+      "description": "The HTML selector to use for this directive.\n\n用于此指令的 HTML 选择器。"
     },
     "flat": {
       "type": "boolean",
-      "description": "When true (the default), creates the new files at the top level of the current project.",
+      "description": "When true (the default), creates the new files at the top level of the current project.\n\n如果为 true（默认值），则在当前项目的顶层创建新文件。",
       "default": true
     },
     "module": {
       "type": "string",
-      "description": "The declaring NgModule.",
+      "description": "The declaring NgModule.\n\n指定其声明模块。",
       "alias": "m"
     },
     "export": {
       "type": "boolean",
       "default": false,
-      "description": "The declaring NgModule exports this directive.",
+      "description": "The declaring NgModule exports this directive.\n\n将从声明模块中导出此指令。",
       "x-user-analytics": 19
     },
     "lintFix": {
       "type": "boolean",
-      "description": "Apply lint fixes after generating the directive.",
+      "description": "Apply lint fixes after generating the directive.\n\n生成此指令后，应用 lint 修复程序。",
       "x-user-analytics": 15,
-      "x-deprecated": "Use \"ng lint --fix\" directly instead."
+      "x-deprecated": "Use \"ng lint --fix\" directly instead.\n\n改为直接用 \"ng lint --fix\"。"
     }
   },
   "required": [

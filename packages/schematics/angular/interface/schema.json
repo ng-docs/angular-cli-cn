@@ -3,11 +3,11 @@
   "id": "SchematicsAngularInterface",
   "title": "Angular Interface Options Schema",
   "type": "object",
-  "description": "Creates a new generic interface definition in the given or default project.",
+  "description": "Creates a new generic interface definition in the given or default project.\n\n在给定或默认项目中创建一个新的通用接口定义。",
   "properties": {
     "name": {
       "type": "string",
-      "description": "The name of the interface.",
+      "description": "The name of the interface.\n\n接口名称。",
       "$default": {
         "$source": "argv",
         "index": 0
@@ -17,12 +17,12 @@
     "path": {
       "type": "string",
       "format": "path",
-      "description": "The path at which to create the interface, relative to the workspace root.",
+      "description": "The path at which to create the interface, relative to the workspace root.\n\n要创建的接口的路径。是相对于工作区根目录的。",
       "visible": false
     },
     "project": {
       "type": "string",
-      "description": "The name of the project.",
+      "description": "The name of the project.\n\n项目的名称。",
       "$default": {
         "$source": "projectName"
       }
@@ -30,11 +30,11 @@
     "prefix": {
       "type": "string",
       "default": "",
-      "description": "A prefix to apply to generated selectors."
+      "description": "A prefix to apply to generated selectors.\n\n用于生成选择器的前缀。"
     },
     "type": {
       "type": "string",
-      "description": "Adds a developer-defined type to the filename, in the format \"name.type.ts\".",
+      "description": "Adds a developer-defined type to the filename, in the format \"name.type.ts\".\n\n将开发人员定义的类型添加到文件名中，格式为 “name.type.ts”。",
       "$default": {
         "$source": "argv",
         "index": 1
@@ -42,9 +42,9 @@
     },
     "lintFix": {
       "type": "boolean",
-      "description": "Apply lint fixes after generating the interface.",
+      "description": "Apply lint fixes after generating the interface.\n\n生成此接口后，应用 lint 修复程序。",
       "x-user-analytics": 15,
-      "x-deprecated": "Use \"ng lint --fix\" directly instead."
+      "x-deprecated": "Use \"ng lint --fix\" directly instead.\n\n改为直接用 \"ng lint --fix\"。"
     }
   },
   "required": [

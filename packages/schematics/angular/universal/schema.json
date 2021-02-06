@@ -3,43 +3,43 @@
   "id": "SchematicsAngularUniversalApp",
   "title": "Angular Universal App Options Schema",
   "type": "object",
-  "description": "Pass this schematic to the \"run\" command to set up server-side rendering for an app.",
+  "description": "Pass this schematic to the \"run\" command to set up server-side rendering for an app.\n\n将此原理图传递到 “run” 命令以设置应用程序的服务端渲染。",
   "properties": {
     "clientProject": {
       "type": "string",
-      "description": "The name of the related client app. Required in place of \"project\"."
+      "description": "The name of the related client app. Required in place of \"project\".\n\n相关客户端应用的名称。必须位于 \"project\" 下。"
     },
     "appId": {
       "type": "string",
       "format": "html-selector",
-      "description": "The app identifier to use for transition.",
+      "description": "The app identifier to use for transition.\n\n用于过渡的应用程序标识符。",
       "default": "serverApp"
     },
     "main": {
       "type": "string",
       "format": "path",
-      "description": "The name of the main entry-point file.",
+      "description": "The name of the main entry-point file.\n\n主入口点文件的名称。",
       "default": "main.server.ts"
     },
     "appDir": {
       "type": "string",
       "format": "path",
-      "description": "The name of the application folder.",
+      "description": "The name of the application folder.\n\n应用程序文件夹的名称。",
       "default": "app"
     },
     "rootModuleFileName": {
       "type": "string",
       "format": "path",
-      "description": "The name of the root NgModule file.",
+      "description": "The name of the root NgModule file.\n\n根 NgModule 文件的名称。",
       "default": "app.server.module.ts"
     },
     "rootModuleClassName": {
       "type": "string",
-      "description": "The name of the root NgModule class.",
+      "description": "The name of the root NgModule class.\n\n根 NgModule 类的名称。",
       "default": "AppServerModule"
     },
     "skipInstall": {
-      "description": "Do not install packages for dependencies.",
+      "description": "Do not install packages for dependencies.\n\n不要安装依赖包。",
       "type": "boolean",
       "default": false
     }

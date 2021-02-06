@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/deploy.json",
-  "description": "Invokes the deploy builder for a specified project or for the default project in the workspace.",
+  "descriptionEn": "Invokes the deploy builder for a specified project or for the default project in the workspace.",
+  "description": "Invokes the deploy builder for a specified project or for the default project in the workspace.\n\n为指定的项目或默认项目，执行部署构建器。",
   "$longDescription": "./deploy-long.md",
 
   "$scope": "in",
@@ -13,14 +14,16 @@
       "properties": {
         "project": {
           "type": "string",
-          "description": "The name of the project to deploy.",
+          "descriptionEn": "The name of the project to deploy.",
+          "description": "The name of the project to deploy.\n\n要部署的项目名。",
           "$default": {
             "$source": "argv",
             "index": 0
           }
         },
         "configuration": {
-          "description": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.",
+          "descriptionEn": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.",
+          "description": "One or more named builder configurations as a comma-separated list as specified in the \"configurations\" section of angular.json.\nThe builder uses the named configurations to run the given target.\nFor more information, see https://angular.io/guide/workspace-config#alternate-build-configurations.\n\n构建器的一个或多个命名配置，是一个逗号分隔的列表，就像在 angular.json 的 \"configurations\" 部分指定的一样。\n本构建器使用这些命名配置来运行给定的目标。\n欲知详情，参见 https://angular.cn/guide/workspace-config#alternate-build-configurations。",
           "type": "string",
           "aliases": [
             "c"

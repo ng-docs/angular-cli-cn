@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "packages": {
-      "description": "The package or packages to update.",
+      "description": "The package or packages to update.\n\n该包或要更新的包。",
       "type": "array",
       "items": {
         "type": "string"
@@ -15,30 +15,30 @@
       }
     },
     "force": {
-      "description": "When false (the default), reports an error if installed packages are incompatible with the update.",
+      "description": "When false (the default), reports an error if installed packages are incompatible with the update.\n\n如果为 false（默认值），则如果要安装的包与此更新不兼容，就报告错误。",
       "default": false,
       "type": "boolean"
     },
     "next": {
-      "description": "Update to the latest version, including beta and RCs.",
+      "description": "Update to the latest version, including beta and RCs.\n\n更新到最新版本，包括 beta 和 RC。",
       "default": false,
       "type": "boolean"
     },
     "migrateOnly": {
-      "description": "Perform a migration, but do not update the installed version.",
+      "description": "Perform a migration, but do not update the installed version.\n\n执行迁移，但不要更新已安装的版本。",
       "default": false,
       "type": "boolean"
     },
     "from": {
-      "description": "When using `--migrateOnly` for a single package, the version of that package from which to migrate.",
+      "description": "When using `--migrateOnly` for a single package, the version of that package from which to migrate.\n\n当对单个包应用 `--migrateOnly` 时，要迁移的包的原始版本。",
       "type": "string"
     },
     "to": {
-      "description": "When using `--migrateOnly` for a single package, the version of that package to which to migrate.",
+      "description": "When using `--migrateOnly` for a single package, the version of that package to which to migrate.\n\n当对单个包应用 `--migrateOnly` 时，要迁移的包的目标版本。",
       "type": "string"
     },
     "registry": {
-      "description": "The npm registry to use.",
+      "description": "The npm registry to use.\n\n要使用的 NPM registry。",
       "type": "string",
       "oneOf": [
         {
@@ -50,11 +50,11 @@
       ]
     },
     "verbose": {
-      "description": "Display additional details during the update process.",
+      "description": "Display additional details during the update process.\n\n在升级过程中显示更多详情。",
       "type": "boolean"
     },
     "packageManager": {
-      "description": "The preferred package manager configuration files to use for registry settings.",
+      "description": "The preferred package manager configuration files to use for registry settings.\n\n用于访问 Registry 设置的首选包管理器配置文件。",
       "type": "string",
       "default": "npm",
       "enum": [

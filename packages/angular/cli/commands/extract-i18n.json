@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "ng-cli://commands/extract-i18n.json",
-  "description": "Extracts i18n messages from source code.",
+  "descriptionEn": "Extracts i18n messages from source code.",
+  "description": "Extracts i18n messages from source code.\n\n从源码中提取 i18n 消息。",
   "$longDescription": "",
 
   "$aliases": ["i18n-extract", "xi18n"],

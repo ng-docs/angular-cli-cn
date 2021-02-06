@@ -1,35 +1,35 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "Karma Target",
-  "description": "Karma target options for Build Facade.",
+  "description": "Karma target options for Build Facade.\n\n生成立面的业力目标选项。",
   "type": "object",
   "properties": {
     "main": {
       "type": "string",
-      "description": "The name of the main entry-point file."
+      "description": "The name of the main entry-point file.\n\n主入口点文件的名称。"
     },
     "tsConfig": {
       "type": "string",
-      "description": "The name of the TypeScript configuration file."
+      "description": "The name of the TypeScript configuration file.\n\nTypeScript 配置文件的名称。"
     },
     "karmaConfig": {
       "type": "string",
-      "description": "The name of the Karma configuration file."
+      "description": "The name of the Karma configuration file.\n\nKarma 配置文件的名称。"
     },
     "polyfills": {
       "type": "string",
-      "description": "The name of the polyfills file."
+      "description": "The name of the polyfills file.\n\npolyfills 文件的名称。"
     },
     "assets": {
       "type": "array",
-      "description": "List of static application assets.",
+      "description": "List of static application assets.\n\n静态应用资产列表。",
       "default": [],
       "items": {
         "$ref": "#/definitions/assetPattern"
       }
     },
     "scripts": {
-      "description": "Global scripts to be included in the build.",
+      "description": "Global scripts to be included in the build.\n\n要包含在此构建中的全局脚本。",
       "type": "array",
       "default": [],
       "items": {
@@ -37,7 +37,7 @@
       }
     },
     "styles": {
-      "description": "Global styles to be included in the build.",
+      "description": "Global styles to be included in the build.\n\n要包含在此构建中的全局样式。",
       "type": "array",
       "default": [],
       "items": {
@@ -45,11 +45,11 @@
       }
     },
     "stylePreprocessorOptions": {
-      "description": "Options to pass to style preprocessors",
+      "description": "Options to pass to style preprocessors\n\n要传给样式预处理器的选项",
       "type": "object",
       "properties": {
         "includePaths": {
-          "description": "Paths to include. Paths will be resolved to project root.",
+          "description": "Paths to include. Paths will be resolved to project root.\n\n一些要包含的路径。这些路径会基于项目的根目录进行解析。",
           "type": "array",
           "items": {
             "type": "string"
@@ -64,10 +64,10 @@
       "items": {
         "type": "string"
       },
-      "description": "Globs of files to include, relative to workspace or project root. \nThere are 2 special cases:\n - when a path to directory is provided, all spec files ending \".spec.@(ts|tsx)\" will be included\n - when a path to a file is provided, and a matching spec file exists it will be included instead"
+      "description": "Globs of files to include, relative to workspace or project root. \nThere are 2 special cases:\n\n要包含的文件的 glob，是相对于工作空间或项目根目录的。\n 有两个特例：\n\n - when a path to directory is provided, all spec files ending \".spec.@(ts|tsx)\" will be included\n\n   当提供的是目录路径时，会包含所有以 \".spec.@(ts|tsx)\" 结尾的规约文件。\n\n - when a path to a file is provided, and a matching spec file exists it will be included instead\n\n   当提供的是文件路径并且匹配的规约文件存在时，会包含这些匹配的文件。"
     },
     "sourceMap": {
-      "description": "Output source maps for scripts and styles. For more information, see https://angular.io/guide/workspace-config#source-map-configuration.",
+      "description": "Output source maps for scripts and styles. For more information, see https://angular.io/guide/workspace-config#source-map-configuration.\n\n输出脚本和样式的源码映射信息。欲知详情，请参阅</guide/workspace-config#source-map-configuration>。",
       "default": true,
       "oneOf": [
         {
@@ -75,17 +75,17 @@
           "properties": {
             "scripts": {
               "type": "boolean",
-              "description": "Output source maps for all scripts.",
+              "description": "Output source maps for all scripts.\n\n输出所有脚本的源码映射信息。",
               "default": true
             },
             "styles": {
               "type": "boolean",
-              "description": "Output source maps for all styles.",
+              "description": "Output source maps for all styles.\n\n输出所有样式的源码映射信息。",
               "default": true
             },
             "vendor": {
               "type": "boolean",
-              "description": "Resolve vendor packages source maps.",
+              "description": "Resolve vendor packages source maps.\n\n是否解析来自供应商包的源码映射信息。",
               "default": false
             }
           },
@@ -98,40 +98,40 @@
     },
     "progress": {
       "type": "boolean",
-      "description": "Log progress to the console while building.",
+      "description": "Log progress to the console while building.\n\n在构建时将进度记录到控制台。",
       "default": true
     },
     "watch": {
       "type": "boolean",
-      "description": "Run build when files change."
+      "description": "Run build when files change.\n\n当文件更改时运行构建。"
     },
     "poll": {
       "type": "number",
-      "description": "Enable and define the file watching poll time period in milliseconds."
+      "description": "Enable and define the file watching poll time period in milliseconds.\n\n启用并定义文件监视轮询间隔（以毫秒为单位）。"
     },
     "preserveSymlinks": {
       "type": "boolean",
-      "description": "Do not use the real path when resolving modules. If unset then will default to `true` if NodeJS option --preserve-symlinks is set."
+      "description": "Do not use the real path when resolving modules. If unset then will default to `true` if NodeJS option --preserve-symlinks is set.\n\n当解析模块时，不要使用真实路径。如果未设置，则如果 NodeJS 启用了 --preserve-symlinks 选项，就默认为 `true`。"
     },
     "browsers": {
       "type": "string",
-      "description": "Override which browsers tests are run against."
+      "description": "Override which browsers tests are run against.\n\n覆盖要针对哪些浏览器运行测试。"
     },
     "codeCoverage": {
       "type": "boolean",
-      "description": "Output a code coverage report.",
+      "description": "Output a code coverage report.\n\n输出代码覆盖率报告。",
       "default": false
     },
     "codeCoverageExclude": {
       "type": "array",
-      "description": "Globs to exclude from code coverage.",
+      "description": "Globs to exclude from code coverage.\n\n排除在代码覆盖范围之外的 glob。",
       "items": {
         "type": "string"
       },
       "default": []
     },
     "fileReplacements": {
-      "description": "Replace compilation source files with other compilation source files in the build.",
+      "description": "Replace compilation source files with other compilation source files in the build.\n\n用构建中的其他编译源文件替换编译源文件。",
       "type": "array",
       "items": {
         "oneOf": [
@@ -173,14 +173,14 @@
     },
     "reporters": {
       "type": "array",
-      "description": "Karma reporters to use. Directly passed to the karma runner.",
+      "description": "Karma reporters to use. Directly passed to the karma runner.\n\n要使用的 Karma 汇报器。直接传给 Karma 运行器。",
       "items": {
         "type": "string"
       }
     },
     "webWorkerTsConfig": {
       "type": "string",
-      "description": "TypeScript configuration for Web Worker modules."
+      "description": "TypeScript configuration for Web Worker modules.\n\nWeb Worker 模块的 TypeScript 配置。"
     }
   },
   "additionalProperties": false,
@@ -197,18 +197,18 @@
           "properties": {
             "glob": {
               "type": "string",
-              "description": "The pattern to match."
+              "description": "The pattern to match.\n\n要匹配的模式。"
             },
             "input": {
               "type": "string",
-              "description": "The input directory path in which to apply 'glob'. Defaults to the project root."
+              "description": "The input directory path in which to apply 'glob'. Defaults to the project root.\n\n应用 “glob”的输入目录路径。默认为项目根目录。"
             },
             "output": {
               "type": "string",
-              "description": "Absolute path within the output."
+              "description": "Absolute path within the output.\n\n输出内的绝对路径。"
             },
             "ignore": {
-              "description": "An array of globs to ignore.",
+              "description": "An array of globs to ignore.\n\n一组要忽略的小球。",
               "type": "array",
               "items": {
                 "type": "string"
@@ -234,15 +234,15 @@
           "properties": {
             "input": {
               "type": "string",
-              "description": "The file to include."
+              "description": "The file to include.\n\n要包含的文件。"
             },
             "bundleName": {
               "type": "string",
-              "description": "The bundle name for this extra entry point."
+              "description": "The bundle name for this extra entry point.\n\n此额外入口点的捆绑软件名称。"
             },
             "inject": {
               "type": "boolean",
-              "description": "If the bundle will be referenced in the HTML file.",
+              "description": "If the bundle will be referenced in the HTML file.\n\n是否在 HTML 文件中引用了该包。",
               "default": true
             }
           },
@@ -253,7 +253,7 @@
         },
         {
           "type": "string",
-          "description": "The file to include."
+          "description": "The file to include.\n\n要包含的文件。"
         }
       ]
     }

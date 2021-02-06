@@ -3,11 +3,11 @@
   "id": "SchematicsAngularGuard",
   "title": "Angular Guard Options Schema",
   "type": "object",
-  "description": "Generates a new, generic route guard definition in the given or default project.",
+  "description": "Generates a new, generic route guard definition in the given or default project.\n\n在给定或默认项目中生成新的通用路由守卫定义。",
   "properties": {
     "name": {
       "type": "string",
-      "description": "The name of the new route guard.",
+      "description": "The name of the new route guard.\n\n新路由守卫的名称。",
       "$default": {
         "$source": "argv",
         "index": 0
@@ -16,37 +16,37 @@
     },
     "skipTests": {
       "type": "boolean",
-      "description": "Do not create \"spec.ts\" test files for the new guard.",
+      "description": "Do not create \"spec.ts\" test files for the new guard.\n\n不要为新守卫创建 “spec.ts” 测试文件。",
       "default": false,
       "x-user-analytics": 12
     },
     "flat": {
       "type": "boolean",
-      "description": "When true (the default), creates the new files at the top level of the current project.",
+      "description": "When true (the default), creates the new files at the top level of the current project.\n\n如果为 true（默认值），则在当前项目的顶层创建新文件。",
       "default": true
     },
     "path": {
       "type": "string",
       "format": "path",
-      "description": "The path at which to create the interface that defines the guard, relative to the current workspace.",
+      "description": "The path at which to create the interface that defines the guard, relative to the current workspace.\n\n用于创建定义守卫的接口的路径。相对于当前工作空间。",
       "visible": false
     },
     "project": {
       "type": "string",
-      "description": "The name of the project.",
+      "description": "The name of the project.\n\n项目的名称。",
       "$default": {
         "$source": "projectName"
       }
     },
     "lintFix": {
       "type": "boolean",
-      "description": "Apply lint fixes after generating the guard.",
+      "description": "Apply lint fixes after generating the guard.\n\n生成此守卫后，应用 lint 修补程序。",
       "x-user-analytics": 15,
-      "x-deprecated": "Use \"ng lint --fix\" directly instead."
+      "x-deprecated": "Use \"ng lint --fix\" directly instead.\n\n改为直接用 \"ng lint --fix\"。"
     },
     "implements": {
       "type": "array",
-      "description": "Specifies which interfaces to implement.",
+      "description": "Specifies which interfaces to implement.\n\n指定要实现的接口。",
       "uniqueItems": true,
       "minItems": 1,
       "items": {

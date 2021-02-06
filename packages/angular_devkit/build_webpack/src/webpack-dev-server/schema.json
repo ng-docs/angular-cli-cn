@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/schema",
   "title": "Webpack Dev-Server Builder",
-  "description": "Webpack Dev-Server Builder schema for Architect.",
+  "description": "Webpack Dev-Server Builder schema for Architect.\n\nWebpack Dev-Server 构建器的建筑师模式定义。",
   "type": "object",
   "properties": {
     "webpackConfig": {
       "type": "string",
-      "description": "The path to the Webpack configuration file."
+      "description": "The path to the Webpack configuration file.\n\nWebpack 配置文件的路径。"
     }
   },
   "additionalProperties": false,

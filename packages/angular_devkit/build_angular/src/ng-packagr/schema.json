@@ -1,20 +1,20 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "ng-packagr Target",
-  "description": "ng-packagr target options for Build Architect. Use to build library projects.",
+  "description": "ng-packagr target options for Build Architect. Use to build library projects.\n\nng-packagr 目标的建筑师选项选项。用于构建库项目。",
   "type": "object",
   "properties": {
     "project": {
       "type": "string",
-      "description": "The file path for the ng-packagr configuration file, relative to the current workspace."
+      "description": "The file path for the ng-packagr configuration file, relative to the current workspace.\n\nng-packagr 配置文件的路径，是相对于当前工作空间的。"
     },
     "tsConfig": {
       "type": "string",
-      "description": "The full path for the TypeScript configuration file, relative to the current workspace."
+      "description": "The full path for the TypeScript configuration file, relative to the current workspace.\n\nTypeScript 配置文件的完整路径，是相对于当前工作空间的。"
     },
     "watch": {
       "type": "boolean",
-      "description": "Run build when files change.",
+      "description": "Run build when files change.\n\n当文件更改时自动构建。",
       "default": false
     }
   },

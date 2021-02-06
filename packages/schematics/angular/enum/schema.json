@@ -3,11 +3,11 @@
   "id": "SchematicsAngularEnum",
   "title": "Angular Enum Options Schema",
   "type": "object",
-  "description": "Generates a new, generic enum definition for the given or default project.",
+  "description": "Generates a new, generic enum definition for the given or default project.\n\n为给定或默认项目生成新的通用枚举定义。",
   "properties": {
     "name": {
       "type": "string",
-      "description": "The name of the enum.",
+      "description": "The name of the enum.\n\n枚举的名称。",
       "$default": {
         "$source": "argv",
         "index": 0
@@ -17,21 +17,21 @@
     "path": {
       "type": "string",
       "format": "path",
-      "description": "The path at which to create the enum definition, relative to the current workspace.",
+      "description": "The path at which to create the enum definition, relative to the current workspace.\n\n要创建的枚举定义的路径。相对于当前工作空间。",
       "visible": false
     },
     "project": {
       "type": "string",
-      "description": "The name of the project in which to create the enum. Default is the configured default project for the workspace.",
+      "description": "The name of the project in which to create the enum. Default is the configured default project for the workspace.\n\n要在其中创建枚举的项目的名称。默认是工作区已配置的默认项目。",
       "$default": {
         "$source": "projectName"
       }
     },
     "lintFix": {
       "type": "boolean",
-      "description": "Apply lint fixes after generating the enum.",
+      "description": "Apply lint fixes after generating the enum.\n\n生成此枚举后，应用 lint 修复程序。",
       "x-user-analytics": 15,
-      "x-deprecated": "Use \"ng lint --fix\" directly instead."
+      "x-deprecated": "Use \"ng lint --fix\" directly instead.\n\n改为直接用 \"ng lint --fix\"。"
     }
   },
   "required": [

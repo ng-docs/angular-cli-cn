@@ -3,11 +3,11 @@
   "id": "SchematicsAngularPipe",
   "title": "Angular Pipe Options Schema",
   "type": "object",
-  "description": "Creates a new generic pipe definition in the given or default project.",
+  "description": "Creates a new generic pipe definition in the given or default project.\n\n在给定或默认项目中创建一个新的通用管道定义。",
   "properties": {
     "name": {
       "type": "string",
-      "description": "The name of the pipe.",
+      "description": "The name of the pipe.\n\n管道的名称。",
       "$default": {
         "$source": "argv",
         "index": 0
@@ -17,12 +17,12 @@
     "path": {
       "type": "string",
       "format": "path",
-      "description": "The path at which to create the pipe, relative to the workspace root.",
+      "description": "The path at which to create the pipe, relative to the workspace root.\n\n要创建的管道的路径。是相对于工作区根目录的。",
       "visible": false
     },
     "project": {
       "type": "string",
-      "description": "The name of the project.",
+      "description": "The name of the project.\n\n项目的名称。",
       "$default": {
         "$source": "projectName"
       }
@@ -30,37 +30,37 @@
     "flat": {
       "type": "boolean",
       "default": true,
-      "description": "When true (the default) creates files at the top level of the project."
+      "description": "When true (the default) creates files at the top level of the project.\n\n如果为 true（默认值），则在项目的顶层创建文件。"
     },
     "skipTests": {
       "type": "boolean",
-      "description": "Do not create \"spec.ts\" test files for the new pipe.",
+      "description": "Do not create \"spec.ts\" test files for the new pipe.\n\n不要为新管道创建 “spec.ts” 测试文件。",
       "default": false,
       "x-user-analytics": 12
     },
     "skipImport": {
       "type": "boolean",
       "default": false,
-      "description": "Do not import this pipe into the owning NgModule.",
+      "description": "Do not import this pipe into the owning NgModule.\n\n不要将此管道导入到所属的 NgModule 中。",
       "x-user-analytics": 18
     },
     "module": {
       "type": "string",
-      "description": "The declaring NgModule.",
+      "description": "The declaring NgModule.\n\n指定其声明模块。",
       "alias": "m"
     },
     "export": {
       "type": "boolean",
       "default": false,
-      "description": "The declaring NgModule exports this pipe.",
+      "description": "The declaring NgModule exports this pipe.\n\n将从声明模块中导出此管道。",
       "x-user-analytics": 19
     },
     "lintFix": {
       "type": "boolean",
       "default": false,
-      "description": "Apply lint fixes after generating the pipe.",
+      "description": "Apply lint fixes after generating the pipe.\n\n生成此管道后，应用 lint 修补程序。",
       "x-user-analytics": 15,
-      "x-deprecated": "Use \"ng lint --fix\" directly instead."
+      "x-deprecated": "Use \"ng lint --fix\" directly instead.\n\n改为直接用 \"ng lint --fix\"。"
     }
   },
   "required": [

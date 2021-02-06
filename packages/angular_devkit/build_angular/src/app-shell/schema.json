@@ -1,35 +1,35 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "App Shell Target",
-  "description": "App Shell target options for Build Facade.",
+  "description": "App Shell target options for Build Facade.\n\nApp Shell 目标的构建器选项。",
   "type": "object",
   "properties": {
     "browserTarget": {
       "type": "string",
-      "description": "A browser builder target use for rendering the app shell in the format of `project:target[:configuration]`. You can also pass in more than one configuration name as a comma-separated list. Example: `project:target:production,staging`.",
+      "description": "A browser builder target use for rendering the app shell in the format of `project:target[:configuration]`. You can also pass in more than one configuration name as a comma-separated list. Example: `project:target:production,staging`.\n\n浏览器构建器目标，用来以 `project:target[:configuration]` 格式渲染应用外壳。你还可以传入以逗号分隔的多个配置名列表。示例： `project:target:production,staging` 。",
       "pattern": "^[^:\\s]+:[^:\\s]+(:[^\\s]+)?$"
     },
     "serverTarget": {
       "type": "string",
-      "description": "A server builder target use for rendering the app shell in the format of `project:target[:configuration]`. You can also pass in more than one configuration name as a comma-separated list. Example: `project:target:production,staging`.",
+      "description": "A server builder target use for rendering the app shell in the format of `project:target[:configuration]`. You can also pass in more than one configuration name as a comma-separated list. Example: `project:target:production,staging`.\n\n服务端构建器目标，用来以 `project:target[:configuration]` 格式渲染应用外壳。你还可以传入以逗号分隔的多个配置名列表。示例： `project:target:production,staging` 。",
       "pattern": "^[^:\\s]+:[^:\\s]+(:[^\\s]+)?$"
     },
     "appModuleBundle": {
       "type": "string",
-      "description": "Script that exports the Server AppModule to render. This should be the main JavaScript outputted by the server target. By default we will resolve the outputPath of the serverTarget and find a bundle named 'main' in it (whether or not there's a hash tag)."
+      "description": "Script that exports the Server AppModule to render. This should be the main JavaScript outputted by the server target. By default we will resolve the outputPath of the serverTarget and find a bundle named 'main' in it (whether or not there's a hash tag).\n\n导出服务器 AppModule 以进行渲染的脚本。这应该是服务器目标输出的主要 JavaScript。默认情况下，我们将解析 serverTarget 的 outputPath 并在其中找到一个名为 “main”（还可能带一个哈希标签）的捆绑包。"
     },
     "route": {
       "type": "string",
-      "description": "The route to render.",
+      "description": "The route to render.\n\n要渲染的路由。",
       "default": "/"
     },
     "inputIndexPath": {
       "type": "string",
-      "description": "The input path for the index.html file. By default uses the output index.html of the browser target."
+      "description": "The input path for the index.html file. By default uses the output index.html of the browser target.\n\nindex.html 文件的输入路径。默认情况下，使用浏览器目标的输出 index.html。"
     },
     "outputIndexPath": {
       "type": "string",
-      "description": "The output path of the index.html file. By default will overwrite the input file."
+      "description": "The output path of the index.html file. By default will overwrite the input file.\n\nindex.html 文件的输出路径。默认情况下将覆盖其输入文件。"
     }
   },
   "additionalProperties": false,
