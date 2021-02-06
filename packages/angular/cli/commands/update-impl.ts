@@ -43,8 +43,8 @@ const pickManifest = require('npm-pick-manifest') as (
 const oldConfigFileNames = ['.angular-cli.json', 'angular-cli.json'];
 
 const NG_VERSION_9_POST_MSG = colors.cyan(
-  '\nYour project has been updated to Angular version 9!\n' +
-  'For more info, please see: https://v9.angular.io/guide/updating-to-version-9',
+  '\n你的项目已经升级到了 Angular 9!\n' +
+  '欲知详情，参见 https://v9.angular.cn/guide/updating-to-version-9',
 );
 
 /**
@@ -93,24 +93,24 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
       switch (event.kind) {
         case 'error':
           error = true;
-          const desc = event.description == 'alreadyExist' ? 'already exists' : 'does not exist.';
-          this.logger.error(`ERROR! ${eventPath} ${desc}.`);
+          const desc = event.description == 'alreadyExist' ? '已存在。' : '不存在。';
+          this.logger.error(`错误! ${eventPath} ${desc}.`);
           break;
         case 'update':
-          logs.push(`${colors.cyan('UPDATE')} ${eventPath} (${event.content.length} bytes)`);
+          logs.push(`${colors.cyan('更新')} ${eventPath} (${event.content.length} 字节)`);
           files.add(eventPath);
           break;
         case 'create':
-          logs.push(`${colors.green('CREATE')} ${eventPath} (${event.content.length} bytes)`);
+          logs.push(`${colors.green('创建')} ${eventPath} (${event.content.length} 字节)`);
           files.add(eventPath);
           break;
         case 'delete':
-          logs.push(`${colors.yellow('DELETE')} ${eventPath}`);
+          logs.push(`${colors.yellow('删除')} ${eventPath}`);
           files.add(eventPath);
           break;
         case 'rename':
           const eventToPath = event.to.startsWith('/') ? event.to.substr(1) : event.to;
-          logs.push(`${colors.blue('RENAME')} ${eventPath} => ${eventToPath}`);
+          logs.push(`${colors.blue('改名')} ${eventPath} => ${eventToPath}`);
           files.add(eventPath);
           break;
       }
@@ -143,12 +143,12 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
       return { success: !error, files };
     } catch (e) {
       if (e instanceof UnsuccessfulWorkflowExecution) {
-        this.logger.error(`${colors.symbols.cross} Migration failed. See above for further details.\n`);
+        this.logger.error(`${colors.symbols.cross} 迁移失败。查看上方的信息以了解详情。\n`);
       } else {
         const logPath = writeErrorToLogFile(e);
         this.logger.fatal(
-          `${colors.symbols.cross} Migration failed: ${e.message}\n` +
-          `  See "${logPath}" for further details.\n`,
+          `${colors.symbols.cross} 迁移失败：${e.message}\n` +
+          `  参见 "${logPath}" 以了解详情。\n`,
         );
       }
 
@@ -168,7 +168,7 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
     const collection = this.workflow.engine.createCollection(collectionPath);
     const name = collection.listSchematicNames().find(name => name === migrationName);
     if (!name) {
-      this.logger.error(`Cannot find migration '${migrationName}' in '${packageName}'.`);
+      this.logger.error(`不能找到 '${packageName}' 包中的 '${migrationName}' 迁移。`);
 
       return false;
     }
@@ -176,7 +176,7 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
     const schematic = this.workflow.engine.createSchematic(name, collection);
 
     this.logger.info(
-      colors.cyan(`** Executing '${migrationName}' of package '${packageName}' **\n`),
+      colors.cyan(`** 正在执行 '${packageName}' 包中的 '${migrationName}'。**\n`),
     );
 
     return this.executePackageMigrations([schematic.description], packageName, commit);
@@ -216,7 +216,7 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
     }
 
     this.logger.info(
-      colors.cyan(`** Executing migrations of package '${packageName}' **\n`),
+      colors.cyan(`** 正在执行 '${packageName}' 包中的迁移。 **\n`),
     );
 
     return this.executePackageMigrations(migrations, packageName, commit);
@@ -244,7 +244,7 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
         return false;
       }
 
-      this.logger.info('  Migration completed.');
+      this.logger.info('  迁移完毕。');
 
       // Commit migration
       if (commit) {
@@ -272,8 +272,8 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
     // Check if the current installed CLI version is older than the latest version.
     if (!disableVersionCheck && await this.checkCLILatestVersion(options.verbose, options.next)) {
       this.logger.warn(
-        `The installed local Angular CLI version is older than the latest ${options.next ? 'pre-release' : 'stable'} version.\n` +
-        'Installing a temporary version to perform the update.',
+        `已安装的本地 Angular CLI 版本比最后一个${options.next ? '与发布' : '稳定'}版旧。\n` +
+        '正在安装临时版本以执行更新。',
       );
 
       return runTempPackageBin(
@@ -290,9 +290,9 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
         : `'${this.packageManager} update'`;
 
       this.logger.warn(`
-        '--all' functionality has been removed as updating multiple packages at once is not recommended.
-        To update packages which don’t provide 'ng update' capabilities in your workspace 'package.json' use ${updateCmd} instead.
-        Run the package manager update command after updating packages which provide 'ng update' capabilities.
+        '--all' 功能已经移除，因为我们不建议一次更新多个包。
+        要更新工作空间的 'package.json' 中那些未提供 'ng update' 能力的包，请使用 ${updateCmd} 代替。
+        更新了那些提供了 'ng update' 能力的包之后，会运行包管理器的更新命令。
       `);
 
       return 0;
@@ -305,19 +305,19 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
 
         // only registry identifiers are supported
         if (!packageIdentifier.registry) {
-          this.logger.error(`Package '${request}' is not a registry package identifer.`);
+          this.logger.error(`包 '${request}' 不是一个有效的 Registry 包标识符。`);
 
           return 1;
         }
 
         if (packages.some(v => v.name === packageIdentifier.name)) {
-          this.logger.error(`Duplicate package '${packageIdentifier.name}' specified.`);
+          this.logger.error(`指定了重复的包 '${packageIdentifier.name}'。`);
 
           return 1;
         }
 
         if (options.migrateOnly && packageIdentifier.rawSpec) {
-          this.logger.warn('Package specifier has no effect when using "migrate-only" option.');
+          this.logger.warn('当使用 "migrate-only" 选项时，包说明符不起作用。');
         }
 
         // If next option is used and no specifier supplied, use next tag
@@ -334,7 +334,7 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
     }
 
     if (!options.migrateOnly && (options.from || options.to)) {
-      this.logger.error('Can only use "from" or "to" options with "migrate-only" option.');
+      this.logger.error('"from" 或 "to" 选项只能和 "migrate-only" 选项一起使用。');
 
       return 1;
     }
@@ -344,18 +344,18 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
     if (packages.length && !this.checkCleanGit()) {
       if (options.allowDirty) {
         this.logger.warn(
-          'Repository is not clean. Update changes will be mixed with pre-existing changes.',
+          '当前代码仓不是干净的，更新时带来的修改可能和现存的修改混在一起。',
         );
       } else {
         this.logger.error(
-          'Repository is not clean. Please commit or stash any changes before updating.',
+          '当前代码仓不是干净的，请在更新前提交或暂存所有修改。',
         );
 
         return 2;
       }
     }
 
-    this.logger.info(`Using package manager: '${this.packageManager}'`);
+    this.logger.info(`正在使用包管理器：'${this.packageManager}'`);
 
     // Special handling for Angular CLI 1.x migrations
     if (
@@ -370,11 +370,11 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
       options.from = '1.0.0';
     }
 
-    this.logger.info('Collecting installed dependencies...');
+    this.logger.info('正在收集已安装的依赖...');
 
     const rootDependencies = await getProjectDependencies(this.context.root);
 
-    this.logger.info(`Found ${rootDependencies.size} dependencies.`);
+    this.logger.info(`发现了 ${rootDependencies.size} 个依赖。`);
 
     if (packages.length === 0) {
       // Show status
@@ -391,19 +391,19 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
 
     if (options.migrateOnly) {
       if (!options.from && typeof options.migrateOnly !== 'string') {
-        this.logger.error('"from" option is required when using the "migrate-only" option without a migration name.');
+        this.logger.error('当使用不带迁移名的 "migrate-only" 选项时，"from" 选项是必要的。');
 
         return 1;
       } else if (packages.length !== 1) {
         this.logger.error(
-          'A single package must be specified when using the "migrate-only" option.',
+          '使用 "migrate-only" 选项时，只能指定一个包。',
         );
 
         return 1;
       }
 
       if (options.next) {
-        this.logger.warn('"next" option has no effect when using "migrate-only" option.');
+        this.logger.warn('当使用 "migrate-only" 选项时，"next" 选项不起作用。');
       }
 
       const packageName = packages[0].name;
@@ -411,7 +411,7 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
       let packagePath = packageDependency?.path;
       let packageNode = packageDependency?.package;
       if (packageDependency && !packageNode) {
-        this.logger.error('Package found in package.json but is not installed.');
+        this.logger.error('在 package.json 中找到了包，但没有安装。');
 
         return 1;
       } else if (!packageDependency) {
@@ -426,7 +426,7 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
       }
 
       if (!packageNode || !packagePath) {
-        this.logger.error('Package is not installed.');
+        this.logger.error('包未安装。');
 
         return 1;
       }
@@ -434,16 +434,16 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
       const updateMetadata = packageNode['ng-update'];
       let migrations = updateMetadata?.migrations;
       if (migrations === undefined) {
-        this.logger.error('Package does not provide migrations.');
+        this.logger.error('包没有提供迁移。');
 
         return 1;
       } else if (typeof migrations !== 'string') {
-        this.logger.error('Package contains a malformed migrations field.');
+        this.logger.error('包里包含了错误的迁移字段。');
 
         return 1;
       } else if (path.posix.isAbsolute(migrations) || path.win32.isAbsolute(migrations)) {
         this.logger.error(
-          'Package contains an invalid migrations field. Absolute paths are not permitted.',
+          '包里包含一个无效的迁移字段。不允许使用绝对路径。',
         );
 
         return 1;
@@ -454,8 +454,8 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
 
       if (migrations.startsWith('../')) {
         this.logger.error(
-          'Package contains an invalid migrations field. ' +
-            'Paths outside the package root are not permitted.',
+          '包里包含一个无效的迁移字段。' +
+            '路径不能位于此包的根路径之外。',
         );
 
         return 1;
@@ -472,9 +472,9 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
           migrations = require.resolve(migrations, { paths: [packagePath] });
         } catch (e) {
           if (e.code === 'MODULE_NOT_FOUND') {
-            this.logger.error('Migrations for package were not found.');
+            this.logger.error('未找到包的迁移。');
           } else {
-            this.logger.error(`Unable to resolve migrations for package.  [${e.message}]`);
+            this.logger.error(`不能解析包的迁移。 [${e.message}]`);
           }
 
           return 1;
@@ -534,14 +534,14 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
     for (const pkg of packages) {
       const node = rootDependencies.get(pkg.name);
       if (!node?.package) {
-        this.logger.error(`Package '${pkg.name}' is not a dependency.`);
+        this.logger.error(`包 '${pkg.name}' 不是依赖项。`);
 
         return 1;
       }
 
       // If a specific version is requested and matches the installed version, skip.
       if (pkg.type === 'version' && node.package.version === pkg.fetchSpec) {
-        this.logger.info(`Package '${pkg.name}' is already at '${pkg.fetchSpec}'.`);
+        this.logger.info(`包 '${pkg.name}' 已经位于 '${pkg.fetchSpec}'。`);
         continue;
       }
 
@@ -554,7 +554,7 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
 
     const packagesToUpdate: string[] = [];
 
-    this.logger.info('Fetching dependency metadata from registry...');
+    this.logger.info('正在从 registry 获取包的依赖元数据...');
     for (const { identifier: requestIdentifier, node } of requests) {
       const packageName = requestIdentifier.name;
 
@@ -566,7 +566,7 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
           verbose: options.verbose,
         });
       } catch (e) {
-        this.logger.error(`Error fetching metadata for '${packageName}': ` + e.message);
+        this.logger.error(`获取包 '${packageName}' 的元数据失败：` + e.message);
 
         return 1;
       }
@@ -606,14 +606,14 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
 
       if (!manifest) {
         this.logger.error(
-          `Package specified by '${requestIdentifier.raw}' does not exist within the registry.`,
+          `由 '${requestIdentifier.raw}' 指定的包在 registry 中不存在。`,
         );
 
         return 1;
       }
 
       if (manifest.version === node.package?.version) {
-        this.logger.info(`Package '${packageName}' is already up to date.`);
+        this.logger.info(`包 '${packageName}' 已经是最新的了。`);
         continue;
       }
 
@@ -668,10 +668,10 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
             migrations = require.resolve(migration.collection, { paths: [packagePath] });
           } catch (e) {
             if (e.code === 'MODULE_NOT_FOUND') {
-              this.logger.error(`Migrations for package (${migration.package}) were not found.`);
+              this.logger.error(`未找到包 (${migration.package}) 的迁移。`);
             } else {
               this.logger.error(
-                `Unable to resolve migrations for package (${migration.package}).  [${e.message}]`,
+                `不能解析包 (${migration.package}) 的迁移。 [${e.message}]`,
               );
             }
 
@@ -707,13 +707,13 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
     try {
       commitNeeded = hasChangesToCommit();
     } catch (err) {
-      this.logger.error(`  Failed to read Git tree:\n${err.stderr}`);
+      this.logger.error(`  读取 Git 树失败：\n${err.stderr}`);
 
       return false;
     }
 
     if (!commitNeeded) {
-      this.logger.info('  No changes to commit after migration.');
+      this.logger.info('  迁移后没有要提交的信息。');
 
       return true;
     }
@@ -723,7 +723,7 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
       createCommit(message);
     } catch (err) {
       this.logger.error(
-        `Failed to commit update (${message}):\n${err.stderr}`);
+        `提交更新失败 (${message})：\n${err.stderr}`);
 
       return false;
     }
@@ -732,13 +732,13 @@ export class UpdateCommand extends Command<UpdateCommandSchema> {
     const hash = findCurrentGitSha();
     const shortMessage = message.split('\n')[0];
     if (hash) {
-      this.logger.info(`  Committed migration step (${getShortHash(hash)}): ${
+      this.logger.info(`  已提交迁移步骤 (${getShortHash(hash)})：${
           shortMessage}.`);
     } else {
       // Commit was successful, but reading the hash was not. Something weird happened,
       // but nothing that would stop the update. Just log the weirdness and continue.
-      this.logger.info(`  Committed migration step: ${shortMessage}.`);
-      this.logger.warn('  Failed to look up hash of most recent commit, continuing anyways.');
+      this.logger.info(`  已提交迁移步骤：${shortMessage}.`);
+      this.logger.warn('  为最近的提交查找哈希值失败。不过还是能继续。');
     }
 
     return true;

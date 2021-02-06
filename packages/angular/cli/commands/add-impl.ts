@@ -43,8 +43,8 @@ export class AddCommand extends SchematicCommand<AddCommandSchema> {
 
     if (!options.collection) {
       this.logger.fatal(
-        `The "ng add" command requires a name argument to be specified eg. ` +
-          `${colors.yellow('ng add [name] ')}. For more details, use "ng help".`,
+        `"ng add" 需要指定一个名字参数，比如 ` +
+          `${colors.yellow('ng add [name] ')}。 欲知详情，请使用 "ng help"。`,
       );
 
       return 1;
@@ -76,7 +76,7 @@ export class AddCommand extends SchematicCommand<AddCommandSchema> {
 
       if (validVersion) {
         // Already installed so just run schematic
-        this.logger.info('Skipping installation: Package already installed');
+        this.logger.info('跳过安装：此包已安装过。');
 
         return this.executeSchematic(packageIdentifier.name, options['--']);
       }
@@ -84,15 +84,15 @@ export class AddCommand extends SchematicCommand<AddCommandSchema> {
 
     const spinner = new Spinner();
 
-    spinner.start('Determining package manager...');
+    spinner.start('正在选择包管理器...');
     const packageManager = await getPackageManager(this.context.root);
     const usingYarn = packageManager === PackageManager.Yarn;
-    spinner.info(`Using package manager: ${colors.grey(packageManager)}`);
+    spinner.info(`正在使用包管理器：${colors.grey(packageManager)}`);
 
     if (packageIdentifier.type === 'tag' && !packageIdentifier.rawSpec) {
       // only package name provided; search for viable version
       // plus special cases for packages that did not have peer deps setup
-      spinner.start('Searching for compatible package version...');
+      spinner.start('正在查找包的兼容版本...');
 
       let packageMetadata;
       try {
@@ -102,7 +102,7 @@ export class AddCommand extends SchematicCommand<AddCommandSchema> {
           verbose: options.verbose,
         });
       } catch (e) {
-        spinner.fail('Unable to load package information from registry: ' + e.message);
+        spinner.fail('无法从 Registry 加载包信息：' + e.message);
 
         return 1;
       }
@@ -123,7 +123,7 @@ export class AddCommand extends SchematicCommand<AddCommandSchema> {
         } else {
           packageIdentifier = npa.resolve(latestManifest.name, latestManifest.version);
         }
-        spinner.succeed(`Found compatible package version: ${colors.grey(packageIdentifier)}.`);
+        spinner.succeed(`已找到兼容的包版本：${colors.grey(packageIdentifier)}.`);
       } else if (!latestManifest || (await this.hasMismatchedPeer(latestManifest))) {
         // 'latest' is invalid so search for most recent matching package
         const versionManifests = Object.values(packageMetadata.versions).filter(
@@ -141,14 +141,14 @@ export class AddCommand extends SchematicCommand<AddCommandSchema> {
         }
 
         if (!newIdentifier) {
-          spinner.warn("Unable to find compatible package.  Using 'latest'.");
+          spinner.warn("未找到兼容的包版本，使用 'latest'。");
         } else {
           packageIdentifier = newIdentifier;
-          spinner.succeed(`Found compatible package version: ${colors.grey(packageIdentifier)}.`);
+          spinner.succeed(`已找到兼容的包版本：${colors.grey(packageIdentifier)}.`);
         }
       } else {
         packageIdentifier = npa.resolve(latestManifest.name, latestManifest.version);
-        spinner.succeed(`Found compatible package version: ${colors.grey(packageIdentifier)}.`);
+        spinner.succeed(`已找到兼容的包版本：${colors.grey(packageIdentifier)}.`);
       }
     }
 
@@ -156,7 +156,7 @@ export class AddCommand extends SchematicCommand<AddCommandSchema> {
     let savePackage: NgAddSaveDepedency | undefined;
 
     try {
-      spinner.start('Loading package information from registry...');
+      spinner.start('正在从注册表加载包信息...');
       const manifest = await fetchPackageManifest(packageIdentifier, this.logger, {
         registry: options.registry,
         verbose: options.verbose,
@@ -168,19 +168,19 @@ export class AddCommand extends SchematicCommand<AddCommandSchema> {
 
       if (await this.hasMismatchedPeer(manifest)) {
         spinner.warn(
-          'Package has unmet peer dependencies. Adding the package may not succeed.',
+          '包没有符合条件的同级依赖。添加的包可能不会成功。',
         );
       } else {
-        spinner.succeed(`Package information loaded.`);
+        spinner.succeed(`包信息已加载。`);
       }
     } catch (e) {
-      spinner.fail(`Unable to fetch package information for '${packageIdentifier}': ${e.message}`);
+      spinner.fail(`无法获取包 '${packageIdentifier}' 的信息：${e.message}`);
 
       return 1;
     }
 
     try {
-      spinner.start('Installing package...');
+      spinner.start('正在安装包...');
       if (savePackage === false) {
         // Temporary packages are located in a different directory
         // Hence we need to resolve them using the temp path
@@ -266,8 +266,7 @@ export class AddCommand extends SchematicCommand<AddCommandSchema> {
     } catch (e) {
       if (e instanceof NodePackageDoesNotSupportSchematics) {
         this.logger.error(tags.oneLine`
-          The package that you are trying to add does not support schematics. You can try using
-          a different version of the package or contact the package author to add ng-add support.
+        你正在试图添加的包不支持原理图。你可以尝试此包的其它版本，或联系包的作者添加对 ng-add 的支持。
         `);
 
         return 1;
@@ -314,7 +313,7 @@ export class AddCommand extends SchematicCommand<AddCommandSchema> {
       try {
         peerIdentifier = npa.resolve(peer, manifest.peerDependencies[peer]);
       } catch {
-        this.logger.warn(`Invalid peer dependency ${peer} found in package.`);
+        this.logger.warn(`包中发现了无效的同级依赖 ${peer}。`);
         continue;
       }
 

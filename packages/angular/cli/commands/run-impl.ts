@@ -15,7 +15,7 @@ export class RunCommand extends ArchitectCommand<RunCommandSchema> {
     if (options.target) {
       return this.runArchitectTarget(options);
     } else {
-      throw new Error('Invalid architect target.');
+      throw new Error('无效的建筑师目标（architect target）');
     }
   }
 }

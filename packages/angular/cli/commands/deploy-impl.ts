@@ -11,17 +11,16 @@ import { Schema as DeployCommandSchema } from './deploy';
 
 const BuilderMissing = `
 
-Cannot find "deploy" target for the specified project.
+未找到指定项目的目标 "deploy"。
 
-You should add a package that implements deployment capabilities for your
-favorite platform.
+你可以添加一个能提供发布到目标平台的能力的包。
 
-For example:
+比如：
   ng add @angular/fire
   ng add @azure/ng-deploy
   ng add @zeit/ng-deploy
 
-Find more packages on npm https://www.npmjs.com/search?q=ng%20deploy
+可以在 npm 上寻找更多包：https://www.npmjs.com/search?q=ng%20deploy
 `;
 
 export class DeployCommand extends ArchitectCommand<DeployCommandSchema> {

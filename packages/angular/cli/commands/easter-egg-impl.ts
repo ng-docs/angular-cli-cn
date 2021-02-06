@@ -16,14 +16,14 @@ function pickOne(of: string[]): string {
 export class AwesomeCommand extends Command<AwesomeCommandSchema> {
   async run() {
     const phrase = pickOne([
-      `You're on it, there's nothing for me to do!`,
-      `Let's take a look... nope, it's all good!`,
-      `You're doing fine.`,
-      `You're already doing great.`,
-      `Nothing to do; already awesome. Exiting.`,
-      `Error 418: As Awesome As Can Get.`,
-      `I spy with my little eye a great developer!`,
-      `Noop... already awesome.`,
+      `你已经有了，我啥也不用做。`,
+      `我们来看看哈……没事，一切 OK！`,
+      `你做得很好。`,
+      `你已经做得很好了。`,
+      `无事可做，已经很棒了。退出。`,
+      `错误 418：你最棒了！`,
+      `哇，在我的小眼睛里看到一个伟大的程序员！`,
+      `无事可做……已经很棒了。`,
     ]);
     this.logger.info(colors.green(phrase));
   }

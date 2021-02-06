@@ -23,8 +23,8 @@ export class AnalyticsCommand extends Command<AnalyticsCommandSchema> {
     if (options.settingOrProject === undefined) {
       if (options['--']) {
         // The user passed positional arguments but they didn't validate.
-        this.logger.error(`Argument ${JSON.stringify(options['--'][0])} is invalid.`);
-        this.logger.error(`Please provide one of the following value: on, off, ci or project.`);
+        this.logger.error(`参数 ${JSON.stringify(options['--'][0])} 无效。`);
+        this.logger.error(`请提供下列值之一: on、off、ci 或 project。`);
 
         return 1;
       } else {
@@ -35,8 +35,8 @@ export class AnalyticsCommand extends Command<AnalyticsCommandSchema> {
       }
     } else if (options.settingOrProject == SettingOrProject.Project
                && options.projectSetting === undefined) {
-      this.logger.error(`Argument ${JSON.stringify(options.settingOrProject)} requires a second `
-                      + `argument of one of the following value: on, off.`);
+      this.logger.error(`参数 ${JSON.stringify(options.settingOrProject)} 要求第二个 `
+                      + `参数是下列值之一：on、off。`);
 
       return 2;
     }
