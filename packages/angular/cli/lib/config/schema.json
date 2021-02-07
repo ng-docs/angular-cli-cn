@@ -18,11 +18,11 @@
     },
     "newProjectRoot": {
       "type": "string",
-      "description": "Path where new projects will be created."
+      "description": "Path where new projects will be created.\n\n新项目要创建到的路径。"
     },
     "defaultProject": {
       "type": "string",
-      "description": "Default project name used in commands."
+      "description": "Default project name used in commands.\n\n命令中使用的默认项目名。"
     },
     "projects": {
       "type": "object",
@@ -43,38 +43,46 @@
       "type": "object",
       "properties": {
         "defaultCollection": {
-          "description": "The default schematics collection to use.",
+          "description": "The default schematics collection to use.\n\n要使用的默认原理图集合。",
           "type": "string"
         },
         "packageManager": {
-          "description": "Specify which package manager tool to use.",
+          "description": "Specify which package manager tool to use.\n\n指定要使用的包管理工具。",
           "type": "string",
-          "enum": [ "npm", "cnpm", "yarn", "pnpm" ]
+          "enum": [
+            "npm",
+            "cnpm",
+            "yarn",
+            "pnpm"
+          ]
         },
         "warnings": {
-          "description": "Control CLI specific console warnings",
+          "description": "Control CLI specific console warnings\n\n控制 CLI 特有的控制台警告。",
           "type": "object",
           "properties": {
             "versionMismatch": {
-              "description": "Show a warning when the global version is newer than the local one.",
+              "description": "Show a warning when the global version is newer than the local one.\n\n当全局版本比本地版本新时显示警告。",
               "type": "boolean"
             }
           }
         },
         "analytics": {
-          "type": ["boolean", "string"],
-          "description": "Share anonymous usage data with the Angular Team at Google."
+          "type": [
+            "boolean",
+            "string"
+          ],
+          "description": "Share anonymous usage data with the Angular Team at Google.\n\n与 Google 的 Angular 开发组共享匿名的使用信息。"
         },
         "analyticsSharing": {
           "type": "object",
           "properties": {
             "tracking": {
-              "description": "Analytics sharing info tracking ID.",
+              "description": "Analytics sharing info tracking ID.\n\n共享分析数据使用的跟踪 ID。",
               "type": "string",
               "pattern": "^GA-\\d+-\\d+$"
             },
             "uuid": {
-              "description": "Analytics sharing info universally unique identifier.",
+              "description": "Analytics sharing info universally unique identifier.\n\n共享分析数据的 UUID。",
               "type": "string"
             }
           }
@@ -89,14 +97,17 @@
           "type": "object",
           "properties": {
             "changeDetection": {
-              "description": "Specifies the change detection strategy.",
-              "enum": ["Default", "OnPush"],
+              "description": "Specifies the change detection strategy.\n\n指定变更检测策略。",
+              "enum": [
+                "Default",
+                "OnPush"
+              ],
               "type": "string",
               "default": "Default",
               "alias": "c"
             },
             "displayBlock": {
-              "description": "Specifies if the style will contain `:host { display: block; }`.",
+              "description": "Specifies if the style will contain `:host { display: block; }`.\n\n指定此样式中是否要包含 `:host { display: block; }`。",
               "type": "boolean",
               "default": false,
               "alias": "b"
@@ -104,53 +115,53 @@
             "entryComponent": {
               "type": "boolean",
               "default": false,
-              "description": "Specifies if the component is an entry component of declaring module."
+              "description": "Specifies if the component is an entry component of declaring module.\n\n指定此组件是否所属模块的入口组件。"
             },
             "export": {
               "type": "boolean",
               "default": false,
-              "description": "Specifies if declaring module exports the component."
+              "description": "Specifies if declaring module exports the component.\n\n指定把此组件声明到模块的导出表中。"
             },
             "flat": {
               "type": "boolean",
-              "description": "Flag to indicate if a directory is created.",
+              "description": "Flag to indicate if a directory is created.\n\n标志是否要创建一层目录。",
               "default": false
             },
             "inlineStyle": {
-              "description": "Specifies if the style will be in the ts file.",
+              "description": "Specifies if the style will be in the ts file.\n\n指定此样式是否要内联在 ts 文件中。",
               "type": "boolean",
               "default": false,
               "alias": "s"
             },
             "inlineTemplate": {
-              "description": "Specifies if the template will be in the ts file.",
+              "description": "Specifies if the template will be in the ts file.\n\n指定此模板是否要内联在 ts 文件中。",
               "type": "boolean",
               "default": false,
               "alias": "t"
             },
             "module": {
               "type": "string",
-              "description": "Allows specification of the declaring module.",
+              "description": "Allows specification of the declaring module.\n\n允许指定要声明到的模块。",
               "alias": "m"
             },
             "prefix": {
               "type": "string",
               "format": "html-selector",
-              "description": "The prefix to apply to generated selectors.",
+              "description": "The prefix to apply to generated selectors.\n\n用于生成选择器的前缀。",
               "alias": "p"
             },
             "selector": {
               "type": "string",
               "format": "html-selector",
-              "description": "The selector to use for the component."
+              "description": "The selector to use for the component.\n\n供本组件用的选择器。"
             },
             "skipImport": {
               "type": "boolean",
-              "description": "Flag to skip the module import.",
+              "description": "Flag to skip the module import.\n\n此标志指定是否要跳过导入到本模块。",
               "default": false
             },
             "style": {
-              "description": "The file extension or preprocessor to use for style files.",
+              "description": "The file extension or preprocessor to use for style files.\n\n要用于样式文件的文件扩展名/预处理器。",
               "type": "string",
               "default": "css",
               "enum": [
@@ -162,14 +173,19 @@
               ]
             },
             "viewEncapsulation": {
-              "description": "Specifies the view encapsulation strategy.",
-              "enum": ["Emulated", "Native", "None", "ShadowDom"],
+              "description": "Specifies the view encapsulation strategy.\n\n指定视图包装策略。",
+              "enum": [
+                "Emulated",
+                "Native",
+                "None",
+                "ShadowDom"
+              ],
               "type": "string",
               "alias": "v"
             },
             "skipTests": {
               "type": "boolean",
-              "description": "Do not create test files.",
+              "description": "Do not create test files.\n\n不要创建测试文件。",
               "default": false
             }
           }
@@ -180,38 +196,38 @@
             "export": {
               "type": "boolean",
               "default": false,
-              "description": "Specifies if declaring module exports the directive."
+              "description": "Specifies if declaring module exports the directive.\n\n指定是否把该指令声明到模块的导出表中。"
             },
             "flat": {
               "type": "boolean",
-              "description": "Flag to indicate if a directory is created.",
+              "description": "Flag to indicate if a directory is created.\n\n标志是否要创建一层目录。",
               "default": true
             },
             "module": {
               "type": "string",
-              "description": "Allows specification of the declaring module.",
+              "description": "Allows specification of the declaring module.\n\n允许指定要声明到的模块。",
               "alias": "m"
             },
             "prefix": {
               "type": "string",
               "format": "html-selector",
-              "description": "The prefix to apply to generated selectors.",
+              "description": "The prefix to apply to generated selectors.\n\n用于生成选择器的前缀。",
               "default": "app",
               "alias": "p"
             },
             "selector": {
               "type": "string",
               "format": "html-selector",
-              "description": "The selector to use for the directive."
+              "description": "The selector to use for the directive.\n\n供本指令用的选择器。"
             },
             "skipImport": {
               "type": "boolean",
-              "description": "Flag to skip the module import.",
+              "description": "Flag to skip the module import.\n\n此标志指定是否要跳过导入到本模块。",
               "default": false
             },
             "skipTests": {
               "type": "boolean",
-              "description": "Do not create test files.",
+              "description": "Do not create test files.\n\n不要创建测试文件。",
               "default": false
             }
           }
@@ -221,29 +237,32 @@
           "properties": {
             "routing": {
               "type": "boolean",
-              "description": "Generates a routing module.",
+              "description": "Generates a routing module.\n\n生成单独的路由模块。",
               "default": false
             },
             "routingScope": {
-              "enum": ["Child", "Root"],
+              "enum": [
+                "Child",
+                "Root"
+              ],
               "type": "string",
-              "description": "The scope for the generated routing.",
+              "description": "The scope for the generated routing.\n\n所生成路由的范围。",
               "default": "Child"
             },
             "flat": {
               "type": "boolean",
-              "description": "Flag to indicate if a directory is created.",
+              "description": "Flag to indicate if a directory is created.\n\n标志是否要生成一层目录。",
               "default": false
             },
             "commonModule": {
               "type": "boolean",
-              "description": "Flag to control whether the CommonModule is imported.",
+              "description": "Flag to control whether the CommonModule is imported.\n\n此标志控制是否要导入 CommonModule。",
               "default": true,
               "visible": false
             },
             "module": {
               "type": "string",
-              "description": "Allows specification of the declaring module.",
+              "description": "Allows specification of the declaring module.\n\n允许指定要声明到的模块。",
               "alias": "m"
             }
           }
@@ -254,11 +273,11 @@
             "flat": {
               "type": "boolean",
               "default": true,
-              "description": "Flag to indicate if a directory is created."
+              "description": "Flag to indicate if a directory is created.\n\n标志是否要生成一层目录。"
             },
             "skipTests": {
               "type": "boolean",
-              "description": "Do not create test files.",
+              "description": "Do not create test files.\n\n不要创建测试文件。",
               "default": false
             }
           }
@@ -269,28 +288,28 @@
             "flat": {
               "type": "boolean",
               "default": true,
-              "description": "Flag to indicate if a directory is created."
+              "description": "Flag to indicate if a directory is created.\n\n标志是否要生成一层目录。"
             },
             "skipTests": {
               "type": "boolean",
-              "description": "Do not create test files.",
+              "description": "Do not create test files.\n\n不要创建测试文件。",
               "default": false
             },
             "skipImport": {
               "type": "boolean",
               "default": false,
-              "description": "Allows for skipping the module import."
+              "description": "Allows for skipping the module import.\n\n是否要跳过导入到模块的。"
             },
             "module": {
               "type": "string",
               "default": "",
-              "description": "Allows specification of the declaring module.",
+              "description": "Allows specification of the declaring module.\n\n允许指定要声明到的模块。",
               "alias": "m"
             },
             "export": {
               "type": "boolean",
               "default": false,
-              "description": "Specifies if declaring module exports the pipe."
+              "description": "Specifies if declaring module exports the pipe.\n\n指定是否要把此管道声明到模块的导出表中。"
             }
           }
         },
@@ -299,7 +318,7 @@
           "properties": {
             "skipTests": {
               "type": "boolean",
-              "description": "Do not create test files.",
+              "description": "Do not create test files.\n\n不要创建测试文件。",
               "default": false
             }
           }
@@ -311,7 +330,7 @@
     },
     "fileVersion": {
       "type": "integer",
-      "description": "File format version",
+      "description": "File format version\n\n文件格式的版本。",
       "minimum": 1
     },
     "project": {
@@ -326,22 +345,22 @@
         "prefix": {
           "type": "string",
           "format": "html-selector",
-          "description": "The prefix to apply to generated selectors."
+          "description": "The prefix to apply to generated selectors.\n\n用于生成选择器的前缀。"
         },
         "root": {
           "type": "string",
-          "description": "Root of the project files."
+          "description": "Root of the project files.\n\n项目文件的根目录。"
         },
         "i18n": {
           "$ref": "#/definitions/project/definitions/i18n"
         },
         "sourceRoot": {
           "type": "string",
-          "description": "The root of the source files, assets and index.html file structure."
+          "description": "The root of the source files, assets and index.html file structure.\n\n源文件、资产文件和 index.html 的根目录。"
         },
         "projectType": {
           "type": "string",
-          "description": "Project type.",
+          "description": "Project type.\n\n项目类型。",
           "enum": [
             "application",
             "library"
@@ -366,15 +385,23 @@
       ],
       "anyOf": [
         {
-          "required": ["architect"],
+          "required": [
+            "architect"
+          ],
           "not": {
-            "required": ["targets"]
+            "required": [
+              "targets"
+            ]
           }
         },
         {
-          "required": ["targets"],
+          "required": [
+            "targets"
+          ],
           "not": {
-            "required": ["architect"]
+            "required": [
+              "architect"
+            ]
           }
         },
         {
@@ -392,7 +419,7 @@
       },
       "definitions": {
         "i18n": {
-          "description": "Project i18n options",
+          "description": "Project i18n options\n\n项目的 i18n 选项。",
           "type": "object",
           "properties": {
             "sourceLocale": {
@@ -514,88 +541,136 @@
             {
               "type": "object",
               "properties": {
-                "builder": { "const": "@angular-devkit/build-angular:app-shell" },
-                "options": { "$ref": "#/definitions/targetOptions/definitions/appShell" },
+                "builder": {
+                  "const": "@angular-devkit/build-angular:app-shell"
+                },
+                "options": {
+                  "$ref": "#/definitions/targetOptions/definitions/appShell"
+                },
                 "configurations": {
                   "type": "object",
-                  "additionalProperties": { "$ref": "#/definitions/targetOptions/definitions/appShell" }
+                  "additionalProperties": {
+                    "$ref": "#/definitions/targetOptions/definitions/appShell"
+                  }
                 }
               }
             },
             {
               "type": "object",
               "properties": {
-                "builder": { "const": "@angular-devkit/build-angular:browser" },
-                "options": { "$ref": "#/definitions/targetOptions/definitions/browser" },
+                "builder": {
+                  "const": "@angular-devkit/build-angular:browser"
+                },
+                "options": {
+                  "$ref": "#/definitions/targetOptions/definitions/browser"
+                },
                 "configurations": {
                   "type": "object",
-                  "additionalProperties": { "$ref": "#/definitions/targetOptions/definitions/browser" }
+                  "additionalProperties": {
+                    "$ref": "#/definitions/targetOptions/definitions/browser"
+                  }
                 }
               }
             },
             {
               "type": "object",
               "properties": {
-                "builder": { "const": "@angular-devkit/build-angular:dev-server" },
-                "options": { "$ref": "#/definitions/targetOptions/definitions/devServer" },
+                "builder": {
+                  "const": "@angular-devkit/build-angular:dev-server"
+                },
+                "options": {
+                  "$ref": "#/definitions/targetOptions/definitions/devServer"
+                },
                 "configurations": {
                   "type": "object",
-                  "additionalProperties": { "$ref": "#/definitions/targetOptions/definitions/devServer" }
+                  "additionalProperties": {
+                    "$ref": "#/definitions/targetOptions/definitions/devServer"
+                  }
                 }
               }
             },
             {
               "type": "object",
               "properties": {
-                "builder": { "const": "@angular-devkit/build-angular:extract-i18n" },
-                "options": { "$ref": "#/definitions/targetOptions/definitions/extracti18n" },
+                "builder": {
+                  "const": "@angular-devkit/build-angular:extract-i18n"
+                },
+                "options": {
+                  "$ref": "#/definitions/targetOptions/definitions/extracti18n"
+                },
                 "configurations": {
                   "type": "object",
-                  "additionalProperties": { "$ref": "#/definitions/targetOptions/definitions/extracti18n" }
+                  "additionalProperties": {
+                    "$ref": "#/definitions/targetOptions/definitions/extracti18n"
+                  }
                 }
               }
             },
             {
               "type": "object",
               "properties": {
-                "builder": { "const": "@angular-devkit/build-angular:karma" },
-                "options": { "$ref": "#/definitions/targetOptions/definitions/karma" },
+                "builder": {
+                  "const": "@angular-devkit/build-angular:karma"
+                },
+                "options": {
+                  "$ref": "#/definitions/targetOptions/definitions/karma"
+                },
                 "configurations": {
                   "type": "object",
-                  "additionalProperties": { "$ref": "#/definitions/targetOptions/definitions/karma" }
+                  "additionalProperties": {
+                    "$ref": "#/definitions/targetOptions/definitions/karma"
+                  }
                 }
               }
             },
             {
               "type": "object",
               "properties": {
-                "builder": { "const": "@angular-devkit/build-angular:protractor" },
-                "options": { "$ref": "#/definitions/targetOptions/definitions/protractor" },
+                "builder": {
+                  "const": "@angular-devkit/build-angular:protractor"
+                },
+                "options": {
+                  "$ref": "#/definitions/targetOptions/definitions/protractor"
+                },
                 "configurations": {
                   "type": "object",
-                  "additionalProperties": { "$ref": "#/definitions/targetOptions/definitions/protractor" }
+                  "additionalProperties": {
+                    "$ref": "#/definitions/targetOptions/definitions/protractor"
+                  }
                 }
               }
             },
             {
               "type": "object",
               "properties": {
-                "builder": { "const": "@angular-devkit/build-angular:server" },
-                "options": { "$ref": "#/definitions/targetOptions/definitions/server" },
+                "builder": {
+                  "const": "@angular-devkit/build-angular:server"
+                },
+                "options": {
+                  "$ref": "#/definitions/targetOptions/definitions/server"
+                },
                 "configurations": {
                   "type": "object",
-                  "additionalProperties": { "$ref": "#/definitions/targetOptions/definitions/server" }
+                  "additionalProperties": {
+                    "$ref": "#/definitions/targetOptions/definitions/server"
+                  }
                 }
               }
             },
             {
               "type": "object",
               "properties": {
-                "builder": { "const": "@angular-devkit/build-angular:tslint" },
-                "options": { "$ref": "#/definitions/targetOptions/definitions/tslint" },
+                "builder": {
+                  "const": "@angular-devkit/build-angular:tslint"
+                },
+                "options": {
+                  "$ref": "#/definitions/targetOptions/definitions/tslint"
+                },
                 "configurations": {
                   "type": "object",
-                  "additionalProperties": { "$ref": "#/definitions/targetOptions/definitions/tslint" }
+                  "additionalProperties": {
+                    "$ref": "#/definitions/targetOptions/definitions/tslint"
+                  }
                 }
               }
             }
@@ -974,7 +1049,9 @@
                       "description": "The output path of the application's generated HTML index file. The full provided path will be used and will be considered relative to the application's configured output path."
                     }
                   },
-                  "required": ["input"]
+                  "required": [
+                    "input"
+                  ]
                 }
               ]
             },
@@ -2030,7 +2107,9 @@
             "tsConfig": {
               "description": "The name of the TypeScript configuration file.",
               "oneOf": [
-                { "type": "string" },
+                {
+                  "type": "string"
+                },
                 {
                   "type": "array",
                   "items": {
@@ -2080,7 +2159,9 @@
                     "vso"
                   ]
                 },
-                { "minLength": 1 }
+                {
+                  "minLength": 1
+                }
               ]
             },
             "exclude": {
@@ -2108,7 +2189,11 @@
       "missingTranslation": {
         "type": "string",
         "description": "How to handle missing translations for i18n.",
-        "enum": ["warning", "error", "ignore"],
+        "enum": [
+          "warning",
+          "error",
+          "ignore"
+        ],
         "default": "warning"
       },
       "localize": {
