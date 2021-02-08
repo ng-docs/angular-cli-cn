@@ -186,7 +186,7 @@ export default async function(opts: SnapshotsOptions, logger: logging.Logger) {
   fs.mkdirSync(helpOutputRoot);
   const commands = require('../packages/angular/cli/commands.json');
   for (const commandName of Object.keys(commands)) {
-    const options = { cwd: newProjectRoot };
+    const options = { cwd: newProjectRoot, maxBuffer: 10 * 1024 * 1024 };
     const childLogger = logger.createChild(commandName);
     const stdout = _exec(ngPath, [commandName, '--help=json'], options, childLogger);
     // Make sure the output is JSON before printing it, and format it as well.
